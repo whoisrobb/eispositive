@@ -6,20 +6,22 @@ import { cn } from "@/lib/utils";
 import { useLocation } from 'react-router-dom';
 import SiteShell from "../shells/site-shell";
 import MobileNav from "./mobile-nav";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Header = () => {
     const [hidden, setHidden] = useState(false);
+    const lastYRef = useRef(0);
 
     const { pathname } = useLocation();
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, 'change', (latest) => {
-        const previous = scrollY.getPrevious();
-        if (latest > previous! && latest > 96) {
-            setHidden(true);
-        } else {
-            setHidden(false);
+        const difference = latest - lastYRef.current;
+        // const previous = scrollY.getPrevious(); 
+        if (Math.abs(difference) > 50) {
+            setHidden(difference > 0);
+
+            lastYRef.current = latest;
         }
     })
 
@@ -31,6 +33,7 @@ const Header = () => {
             hidden: { y: '-100%' }
         }}
         animate={hidden ? 'hidden': 'visible'}
+        transition={{ duration: 0.2 }}
     >
         <SiteShell
             className="flex items-center justify-between gap-12 h-full"
