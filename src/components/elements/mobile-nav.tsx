@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Button, buttonVariants } from "../ui/button";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { buttonVariants } from "../ui/button";
 import { useEffect, useState } from "react";
 import { pages } from "@/config/pages";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import MenuBtn from "../ui/haburger-menu/menu-btn";
 
 const menuTopVariants = {
     initial: {
@@ -72,20 +72,17 @@ const MobileNav = () => {
     <div
         className="lg:hidden"
     >
-        <Button
-            className=""
-            variant={'ghost'}
-            size={'icon'}
-            onClick={() => setOpen((prev) => !prev)}
-        >
-            <HamburgerMenuIcon />
-        </Button>
+        <MenuBtn
+            action={setOpen}
+            state={open}
+            className="z-[1000]"
+        />
 
         <AnimatePresence>
             {open &&
             <>
             <motion.div
-                className="absolute top-0 left-0 right-0 h-screen bg-background origin-top z-50 flex justify-center items-center"
+                className="fixed top-0 left-0 right-0 h-screen w-screen bg-background origin-top z-50 flex justify-center items-center"
                 variants={menuTopVariants}
                 initial="initial"
                 animate="animate"
@@ -114,7 +111,7 @@ const MobileNav = () => {
                 </div>
             </motion.div>
             <motion.div
-                className="absolute top-0 left-0 right-0 h-screen bg-black origin-top"
+                className="fixed top-0 left-0 right-0 h-screen bg-black origin-top"
                 variants={menuBottomVariants}
                 initial="initial"
                 animate="animate"

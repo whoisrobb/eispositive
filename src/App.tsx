@@ -7,6 +7,7 @@ import EplusTv from "./app/eplustv/eplustv"
 import ShareYourStory from "./app/share-your-story/share-your-story"
 import Shop from "./app/shop/shop"
 import Testimonials from "./app/testimonials/testimonials"
+import NavTest from "./components/ideas/nav"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="share-your-story" element={<ShareYourStory />} />
         <Route path="shop" element={<Shop />} />
         <Route path="testimonials" element={<Testimonials />} />
+        <Route path="nav" element={<NavTest />} />
       </Route>
     </Routes>
   )

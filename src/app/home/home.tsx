@@ -1,10 +1,53 @@
+import { Button } from '@/components/ui/button';
+import eipositive from '../../../public/videos/eispositive.mp4';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Intro from './intro';
+import ShopLanding from './shop';
 
 const Home = () => {
   return (
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eaque consequuntur voluptate delectus voluptatum! Inventore quaerat odio amet maxime exercitationem recusandae consequuntur doloribus aliquam, fugit nam ex quibusdam neque deleniti ipsa at sint sit deserunt reprehenderit. Tempora minima, eius porro sapiente maxime architecto nulla unde doloremque neque repudiandae quod earum temporibus voluptas repellendus dolor est totam alias in sit cumque eveniet! Iure ipsa placeat eveniet illum, alias quod dolores, praesentium quisquam, voluptatem quas expedita. Laudantium fugit sunt est modi quo, delectus, quis vero, libero cumque praesentium id possimus rem quibusdam facilis deserunt in velit aspernatur molestiae provident repellat quaerat amet ullam? Dicta cum eaque facere iusto. Libero consectetur aliquam quas provident recusandae blanditiis fugiat sint itaque nihil, at, atque rem laborum natus harum a. Quos at praesentium, sed cupiditate vero eos autem voluptate corrupti eveniet aperiam fuga nostrum neque mollitia, atque quo expedita delectus temporibus, nisi fugit. Quis ea a odit aliquid temporibus numquam aliquam sapiente harum, autem sed exercitationem, animi, sint dolores voluptatum consequuntur repellat facilis. Esse non corrupti, consequatur quaerat error repellendus cupiditate nisi atque corporis autem, deleniti deserunt ipsa asperiores explicabo aperiam, velit hic. Repellat alias commodi dolor sapiente ipsum perspiciatis, accusantium omnis voluptas officiis nam. Libero quisquam sapiente eos assumenda. Ducimus pariatur facilis ex reprehenderit vero adipisci quisquam accusantium? Esse quo, magnam voluptatem possimus voluptates laudantium autem nam obcaecati, est eum doloremque saepe natus voluptatibus ratione consequuntur nemo atque odio expedita iure optio laborum nisi hic, provident temporibus. Eum non dignissimos, voluptatum perferendis saepe quibusdam recusandae soluta consectetur libero voluptas culpa et earum dolor. Ipsa rem doloremque suscipit et commodi incidunt laborum enim tempore quod, consectetur modi nobis cum facere nam facilis ea voluptate sit quisquam ipsum explicabo velit repudiandae cupiditate! Voluptas nulla voluptates eligendi accusamus, a aperiam mollitia. Voluptate, dicta cumque commodi beatae, sapiente quia pariatur ipsa architecto unde sit ipsum eos, rem cupiditate similique harum quae soluta! Rerum dolorum et labore repellendus, distinctio, nihil rem possimus nesciunt ex sunt libero sint provident deleniti iure, beatae perferendis eaque dolores velit quasi quibusdam cupiditate. Voluptates ducimus in ullam voluptatem quas, sunt iusto fugit quidem voluptatibus debitis velit quae similique quibusdam, provident suscipit amet ea fugiat perspiciatis culpa nemo quasi facere. Nemo amet quisquam quasi vel quae. Iste error rerum consequatur quo praesentium suscipit voluptatem fugit. Iusto doloremque, aliquid doloribus eum delectus nihil, consectetur laboriosam quas maiores ullam deleniti quidem aspernatur adipisci optio itaque veniam maxime, omnis modi ipsum. Et totam possimus enim est in id sunt necessitatibus similique sint ex omnis minus hic facilis adipisci, nisi dolores corrupti eligendi laborum laboriosam magnam officiis? Porro optio obcaecati reprehenderit dolorem velit quis nemo reiciendis fugiat vero, quibusdam voluptates totam animi est necessitatibus eos laborum doloribus! Libero ut, consequatur nesciunt dolores voluptatem laudantium culpa eum quas nisi, iste temporibus natus maiores possimus ipsam veniam expedita hic ratione. Distinctio, earum. Minus repellendus, delectus unde natus possimus ullam voluptates. Aliquid saepe commodi facere recusandae corrupti cupiditate, esse rem error minima, dolorem culpa, eos illo dicta molestias repudiandae? Dicta enim ullam voluptatem quidem expedita accusantium nulla qui ut porro, iure possimus iste, voluptate tenetur autem sequi, quas odit ex et beatae? Nihil quos deserunt veniam obcaecati consequatur consectetur magnam numquam minima tempore harum placeat cum quo consequuntur magni recusandae adipisci perspiciatis molestias alias, illo ut aliquid! Autem fuga aliquam animi doloribus optio quod dolorum omnis fugiat, culpa minima quasi inventore reprehenderit voluptates necessitatibus commodi modi iure, nesciunt provident et dolores corporis accusamus sequi at ex? Minus sapiente, ex ducimus veniam eos quas fugit quaerat, atque doloribus impedit aperiam aut dolor laborum asperiores nulla in quod neque explicabo! Laborum nostrum, debitis nemo neque omnis quia sapiente incidunt ipsum, possimus saepe, quos odit a adipisci! Nihil ipsam magnam consequatur a non quia minima repudiandae deserunt dolor voluptate, magni vero accusamus temporibus repellat quos iure enim eum maxime dolorem reiciendis. Quas, aperiam in! Maxime, veritatis! Quidem maxime quia repellat nihil totam recusandae maiores labore animi magnam placeat ad ut, cum voluptatum at id reiciendis sint vitae quod, aperiam dolorem itaque. Repellendus dolorum in inventore quasi deserunt nam dolore fuga amet alias! Quasi modi fugit voluptas tempora, quisquam, blanditiis cumque esse reprehenderit sequi soluta ea laudantium ducimus ratione quidem neque aperiam sed eum dolores nemo minima, cupiditate earum. Amet recusandae facilis, cupiditate temporibus commodi dolore exercitationem, maiores provident expedita officiis ea. Nihil, fugit maiores laborum dolor necessitatibus illo aliquid quod ratione similique esse eum minus magni id autem iste deleniti accusamus. Magnam vitae tempore aspernatur eum officia alias, facere voluptas quibusdam! Nisi commodi suscipit reprehenderit? Sequi et ipsum sed vitae nesciunt praesentium eius molestiae, similique iure omnis cumque. Odio nostrum iure iste hic eveniet, suscipit vitae veniam ratione enim quidem error? Saepe recusandae nam deserunt esse dolore nihil repellat, doloremque eligendi reprehenderit assumenda tempora distinctio aliquid quidem, ipsa soluta dicta fugit mollitia facilis vel hic at in, iusto odit molestiae. Perspiciatis aperiam odit mollitia neque suscipit deserunt, tenetur officia illum tempore ipsum id similique accusamus obcaecati ab blanditiis iusto eveniet fugiat in veritatis nostrum non vel natus sed assumenda. Alias, dolore magni nobis architecto, veniam excepturi debitis porro possimus nesciunt asperiores tempora quas nemo ipsam molestias animi optio quae? Iste consequuntur assumenda eum dicta qui pariatur, libero facere commodi voluptatum magnam asperiores laudantium voluptatem et autem maxime. Tempore odit reprehenderit reiciendis, impedit ad perspiciatis facilis voluptatibus error sit? Explicabo consequuntur pariatur eos debitis illum laborum quibusdam. Non dignissimos magni quaerat cumque, minima perspiciatis voluptatem iure consequuntur vero, adipisci repellendus. Provident fuga suscipit consequatur vero, ea odio iusto iste maiores. Magnam dicta ea molestias voluptatum architecto placeat? Animi vero voluptates illum molestias odio laudantium iusto adipisci eligendi sequi reprehenderit. Ullam, necessitatibus distinctio atque suscipit molestiae esse id eligendi. Et quae quaerat nostrum eum vel optio quas officiis ullam molestiae? Recusandae harum qui ratione ullam mollitia eaque dolor iure suscipit doloribus temporibus omnis magnam unde amet expedita labore illum, saepe voluptate dolorem quidem facilis excepturi aspernatur minus ab commodi. Expedita, corporis maiores a sunt nemo placeat neque consequatur vitae minus voluptatibus ipsa, dolore maxime. Recusandae, quibusdam. Voluptatem, autem!
+      <div className="h-screen flex py-4 items-center justify-center">
+
+        <div className="overflow-hidden rounded-lg h-full w-full relative">
+          <video
+            src={eipositive}
+            className='object-cover h-[100%] w-[100%]'
+            autoPlay
+            loop
+            muted
+          />
+
+          <LandingContent />
+        </div>
+      </div>
+      <Intro />
+      <ShopLanding />
     </div>
   )
 }
 
 export default Home
+
+const LandingContent = () => {
+  return (
+    <div className="absolute lg:bottom-8 bottom-16 left-4 max-w-[60rem] space-y-4">
+      <h1 className="font-anton lg:text-8xl md:text-6xl text-4xl">
+        Everything is Positive
+      </h1>
+
+      <p className="">
+        "Everything is Positive” is about empowering people, thus enabling their communities to become self-sustainable. “Everything is Positive” AKA (E+) is not just a brand but a movement.
+      </p>
+
+      <Button
+        variant="expandIcon"
+        Icon={ArrowRightIcon}
+        iconPlacement="right"
+        className='bg-primary'
+      >
+        Join us
+      </Button>
+    </div>
+  )
+}

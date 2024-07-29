@@ -1,23 +1,20 @@
-import { pages } from "@/config/pages";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { Link } from "react-router-dom";
-import Logo from "./logo";
-import { cn } from "@/lib/utils";
-import { useLocation } from 'react-router-dom';
-import SiteShell from "../shells/site-shell";
-import MobileNav from "./mobile-nav";
-import { useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { useRef, useState } from 'react';
+import Logo from './logo';
+import { Button } from '../ui/button';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import DesktopNav from './desktop-nav';
+import MobileNav from './mobile-nav';
 
 const Header = () => {
     const [hidden, setHidden] = useState(false);
     const lastYRef = useRef(0);
 
-    const { pathname } = useLocation();
     const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const difference = latest - lastYRef.current;
-        // const previous = scrollY.getPrevious(); 
+        // const previous = scrollY.getPrevious();
         if (Math.abs(difference) > 50) {
             setHidden(difference > 0);
 
@@ -27,7 +24,7 @@ const Header = () => {
 
   return (
     <motion.header
-        className="border-b fixed left-0 right-0 h-24 bg-background"
+        className="fixed lg:left-12 md:left-6 left-3 lg:right-12 md:right-6 right-3 h-24 z-10  flex justify-between items-center"
         variants={{
             visible: { y: 0 },
             hidden: { y: '-100%' }
@@ -35,39 +32,20 @@ const Header = () => {
         animate={hidden ? 'hidden': 'visible'}
         transition={{ duration: 0.2 }}
     >
-        <SiteShell
-            className="flex items-center justify-between gap-12 h-full"
-        >
-            
-        <Logo className="w-40" />
+        <Logo className='w-40' />
 
-        <div className="lg:flex items-center hidden">
-            {pages.map((link, index) => (
-                <div
-                    key={index}
-                    className="relative py-2 px-4"
-                >
-                    <Link
-                        to={link.href}
-                        className={cn("uppercase z-10",
-                            pathname === link.href ?
-                            "" :
-                            "text-muted-foreground"
-                        )}
-                    >
-                        {link.title}
-                    </Link>
-                    {link.href === pathname &&
-                    <motion.div
-                        className="absolute top-0 bottom-0 left-0 right-0 rounded -z-10 bg-muted"
-                        layoutId="background"
-                    />}
-                </div>
-            ))}
-        </div>
+        <DesktopNav />
         <MobileNav />
 
-        </SiteShell>
+        <Button
+            variant="expandIcon"
+            Icon={ArrowRightIcon}
+            iconPlacement="right"
+            className='bg-primary hidden lg:flex'
+        >
+            Join us
+        </Button>
+
     </motion.header>
   )
 }
