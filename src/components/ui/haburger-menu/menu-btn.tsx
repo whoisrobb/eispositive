@@ -8,7 +8,7 @@ type MenuBtnProps = HTMLAttributes<HTMLDivElement> & {
     state: boolean;
 }
 
-const MenuBtn = ({ action, state, className, ...props }: MenuBtnProps) => {  
+const MenuBtn = ({ action, state, className }: MenuBtnProps) => {  
     return (
     <Button
         variant={'ghost'}
