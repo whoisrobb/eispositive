@@ -3,9 +3,14 @@ import { HTMLAttributes } from "react";
 import positivity1 from '../../../public/images/positivity-1.jpg';
 import positivity2 from '../../../public/images/positivity-2.jpg';
 import video from '../../../public/videos/3188954-hd_1920_1080_25fps.mp4';
+import ContentShell from "@/components/shells/content-shell";
 
 const Intro = () => {
   return (
+    <ContentShell
+        title="Who we are"
+    >
+
     <div className="relative lg:h-screen h-[175vh] py-24 flex justify-center">
         <div className="max-w-[35rem] w-full h-full text-center space-y-4">
             <div className="">
@@ -31,6 +36,8 @@ const Intro = () => {
         <PageImage className="md:w-[17rem] w-[14rem] h-[25rem] lg:right-4 right-1 md:bottom-[20rem] lg:bottom-[4rem] bottom-[28rem]" image={positivity2} />
         <PageVideo className="md:w-[17rem] w-[10rem] h-[20rem] lg:left-4 md:bottom-[5rem] bottom-[7rem] left-1" video={video} />
     </div>
+        
+    </ContentShell>
   )
 }
 

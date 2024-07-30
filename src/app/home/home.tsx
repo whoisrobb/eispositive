@@ -6,7 +6,7 @@ import ShopLanding from './shop';
 
 const Home = () => {
   return (
-    <div>
+    <div className='space-y-8'>
       <div className="h-screen flex py-4 items-center justify-center">
 
         <div className="overflow-hidden rounded-lg h-full w-full relative">

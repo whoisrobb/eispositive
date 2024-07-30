@@ -2,14 +2,20 @@ import summer from '../../../public/images/summer.jpg';
 import winter from '../../../public/images/winter.jpg';
 import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import ContentShell from '@/components/shells/content-shell';
 
 const ShopLanding = () => {
   return (
+    <ContentShell
+        title='Fashion friendly'
+        subtitle='Our fabulous outfit designs'
+    >
     <div className='grid place-items-center h-[125vh] py-12 space-y-4'>
-        <div className="text-center">
+        {/* <div className="text-center">
             <h1 className="font-anton text-2xl">Fashion friendly</h1>
             <p className="">Our fabulous outfit designs</p>
-        </div>
+        </div> */}
 
         <div className="flex md:flex-row flex-col md:items-center md:justify-center md:gap-8 gap-4">
             <Collections
@@ -28,6 +34,7 @@ const ShopLanding = () => {
             />
         </div>
     </div>
+    </ContentShell>
   )
 }
 
@@ -55,7 +62,7 @@ const Collections = ({ image, title, subtitle, link, linkTitle }: CollectionsPro
                 <p className="">{subtitle}</p>
                 <Link
                     to={link}
-                    className={buttonVariants({ variant: 'link' })}
+                    className={cn(buttonVariants({ variant: 'linkHover1' }))}
                 >
                     {linkTitle}
                 </Link>
