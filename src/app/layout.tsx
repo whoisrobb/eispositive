@@ -1,3 +1,4 @@
+import Footer from "@/components/elements/footer"
 import Header from "@/components/elements/header"
 // import MobileNav from "@/components/elements/mobile-nav"
 import SiteShell from "@/components/shells/site-shell"
@@ -13,6 +14,8 @@ const Layout = () => {
         >
           <Outlet />
         </SiteShell>
+
+        <Footer />
     </div>
   )
 }
