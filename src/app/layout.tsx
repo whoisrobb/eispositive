@@ -10,7 +10,7 @@ const Layout = () => {
         <Header />
         
         <SiteShell
-          // className="pt-24"
+          className="mb-24"
         >
           <Outlet />
         </SiteShell>
