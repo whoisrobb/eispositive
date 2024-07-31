@@ -1,3 +1,4 @@
+import useSplitText from "../hooks/useSplitText";
 
 type PageShellProps = {
     title: string;
@@ -7,11 +8,12 @@ type PageShellProps = {
 };
 
 const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
+    const titleText = useSplitText({ text: title });
   return (
     <div>
         <div className="md:h-[75vh] h-[50vh] flex flex-col justify-center items-center text-center">
             <div className="max-w-[50rem] space-y-4">
-                <h1 className="font-anton lg:text-8xl text-6xl uppercase">{title}</h1>
+                <h1 className="font-anton lg:text-8xl text-6xl uppercase" id='title'>{titleText}</h1>
                 <p className="text-muted-foreground">{subtitle}</p>
             </div>
         </div>
