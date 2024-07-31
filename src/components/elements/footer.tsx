@@ -12,6 +12,7 @@ import payment2 from '../../../public/images/master-card.png';
 import payment3 from '../../../public/images/paypal.png';
 import payment4 from '../../../public/images/payoneer.png';
 import payment5 from '/images/skrill.png';
+import { ModeToggle } from "../themes/mode-toggle";
 
 
 const Footer = () => {
@@ -140,6 +141,7 @@ const Footer = () => {
                 <div className="md:space-y-4 space-y-2">
                     <h1 className="text-xl font-bold">You have feedback?</h1>
                     <EmailForm />
+                    <ModeToggle />
                 </div>
             </div>
 

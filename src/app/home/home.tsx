@@ -18,6 +18,7 @@ const Home = () => {
             muted
           />
 
+          <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent" />
           <LandingContent />
         </div>
       </div>
@@ -31,12 +32,12 @@ export default Home
 
 const LandingContent = () => {
   return (
-    <div className="absolute lg:bottom-8 bottom-16 left-4 max-w-[60rem] space-y-4">
+    <div className="absolute lg:bottom-8 bottom-16 left-4 max-w-[60rem] text-[#fcfcfc] space-y-4">
       <h1 className="font-anton lg:text-8xl md:text-6xl text-4xl">
         Everything is Positive
       </h1>
 
-      <p className="">
+      <p className="leading-tight">
         "Everything is Positive” is about empowering people, thus enabling their communities to become self-sustainable. “Everything is Positive” AKA (E+) is not just a brand but a movement.
       </p>
 
