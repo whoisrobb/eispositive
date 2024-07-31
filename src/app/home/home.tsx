@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import eipositive from '../../../public/videos/eispositive.mp4';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Intro from './intro';
 import ShopLanding from './shop';
@@ -16,7 +15,7 @@ const Home = () => {
 
         <div className="overflow-hidden rounded-lg h-full w-full relative">
           <video
-            src={eipositive}
+            src={'https://utfs.io/f/87297fba-a156-42bb-8b84-f02284499d67-k2j0s8.mp4'}
             className='object-cover h-[100%] w-[100%]'
             autoPlay
             loop

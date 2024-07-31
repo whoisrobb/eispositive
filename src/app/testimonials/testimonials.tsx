@@ -1,5 +1,4 @@
 import PageShell from "../_components/page-shell";
-import eipositive from '../../../public/videos/eispositive.mp4';
 
 const title = 'e+ testimonials'
 const subtitle = 'Read stories from people who have experienced the impact of positivity. These testimonials showcase the power of kindness and its ripple effects.'
@@ -10,7 +9,7 @@ const Testimonials = () => {
       <PageShell
         title={title}
         subtitle={subtitle}
-        source={eipositive}
+        source={'https://utfs.io/f/87297fba-a156-42bb-8b84-f02284499d67-k2j0s8.mp4'}
         type="video"
       />
     </div>

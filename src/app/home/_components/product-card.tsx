@@ -1,4 +1,3 @@
-import image from '../../../../public/images/summer.jpg';
 import { HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -14,7 +13,7 @@ const ProductCard = ({ className }: ProductCardProps) => {
     <div className={cn("rounded-lg overflow-hidden", className)}>
         <div className="">
             <img
-                src={image}
+                src={'https://utfs.io/f/61623c33-0360-495b-b2a4-2cff67c98c5a-eqlob5.jpg'}
                 className="h-full w-full object-cover"
             />
         </div>

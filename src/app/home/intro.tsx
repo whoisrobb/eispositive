@@ -1,8 +1,5 @@
 import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
-import positivity1 from '../../../public/images/positivity-1.jpg';
-import positivity2 from '../../../public/images/positivity-2.jpg';
-import video from '../../../public/videos/3188954-hd_1920_1080_25fps.mp4';
 import ContentShell from "@/components/shells/content-shell";
 
 const Intro = () => {
@@ -32,9 +29,9 @@ const Intro = () => {
             </div>
         </div>
 
-        <PageImage className="md:w-[17rem] w-[10rem] lg:h-[17rem] h-[10rem] md:bottom-[5rem] lg:bottom-[1rem] bottom-[7rem] lg:right-[30rem] right-1" image={positivity1} />
-        <PageImage className="md:w-[17rem] w-[14rem] h-[25rem] lg:right-4 right-1 md:bottom-[20rem] lg:bottom-[4rem] bottom-[28rem]" image={positivity2} />
-        <PageVideo className="md:w-[17rem] w-[10rem] h-[20rem] lg:left-4 md:bottom-[5rem] bottom-[7rem] left-1" video={video} />
+        <PageImage className="md:w-[17rem] w-[10rem] lg:h-[17rem] h-[10rem] md:bottom-[5rem] lg:bottom-[1rem] bottom-[7rem] lg:right-[30rem] right-1" image={'https://utfs.io/f/608ca480-8967-43e6-92aa-bd96104b80bb-3tf0py.jpg'} />
+        <PageImage className="md:w-[17rem] w-[14rem] h-[25rem] lg:right-4 right-1 md:bottom-[20rem] lg:bottom-[4rem] bottom-[28rem]" image={'https://utfs.io/f/cf834e1e-6960-467e-9491-237033d88029-3tf0pz.jpg'} />
+        <PageVideo className="md:w-[17rem] w-[10rem] h-[20rem] lg:left-4 md:bottom-[5rem] bottom-[7rem] left-1" video={'https://utfs.io/f/23bbe487-7eab-4ad2-98e5-64184f191ba2-xwc79j.mp4'} />
     </div>
         
     </ContentShell>

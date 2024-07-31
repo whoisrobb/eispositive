@@ -1,6 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import image from '../../../../public/images/summer.jpg';
 import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
 
@@ -16,7 +15,7 @@ const CollectionCard = ({ className }: CollectionCardProps) => {
     <div className={cn("rounded-lg overflow-hidden", className)}>
         <div className="">
             <img
-                src={image}
+                src={'https://utfs.io/f/61623c33-0360-495b-b2a4-2cff67c98c5a-eqlob5.jpg'}
                 className="h-full w-full object-cover"
             />
         </div>

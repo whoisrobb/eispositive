@@ -1,5 +1,3 @@
-import summer from '../../../public/images/summer.jpg';
-import winter from '../../../public/images/winter.jpg';
 import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -21,14 +19,14 @@ const ShopLanding = () => {
             <Collections
                 title='Summer Essentials Collection'
                 subtitle='Discover vibrant and breezy styles for the sunny season—perfect for every summer adventure.'
-                image={summer}
+                image={'https://utfs.io/f/61623c33-0360-495b-b2a4-2cff67c98c5a-eqlob5.jpg'}
                 link='#'
                 linkTitle='Shop now'
             />
             <Collections
                 title='Winter Warmth Collection'
                 subtitle='Embrace cozy, stylish winter garments designed to keep you warm and chic through cold months.'
-                image={winter}
+                image={'https://utfs.io/f/33393038-a2f0-4b58-bbc4-c63dd0d6b625-d0zxob.jpg'}
                 link='#'
                 linkTitle='Shop now'
             />
