@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { buttonVariants } from "../ui/button";
 import { useEffect, useState } from "react";
 import { pages } from "@/config/pages";
@@ -6,58 +6,32 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import MenuBtn from "../ui/haburger-menu/menu-btn";
 
-const menuTopVariants = {
-    initial: {
-        scaleY: 0,
-    },
-    animate: {
+const wrapperVariants = {
+    open: {
         scaleY: 1,
         transition: {
-            delay: 0.1,
-            duration: 0.7
+          when: "beforeChildren",
+          staggerChildren: 0.1,
         },
-        // delay: 2
     },
-    exit: {
+    closed: {
         scaleY: 0,
         transition: {
-            delay: 0.2
-        }
-    }
-}
-
-const menuBottomVariants = {
-    initial: {
-        scaleY: 0
-    },
-    animate: {
-        scaleY: 1
-    },
-    exit: {
-        scaleY: 0,
-        transition: {
-            delay: 0.3,
-            duration: 0.7
+          when: "afterChildren",
+          staggerChildren: 0.1,
         },
     }
 }
 
 const linksVariants = {
-    initial: {
-        y: '100%',
-        opacity: 0,
-    },
-    animate: {
-        y: 0,
+    open: {
         opacity: 1,
-        transition: {
-            delay: 0.7
-        }
+        y: 0,
     },
-    exit: {
-        y: '-100%',
+    closed: {
         opacity: 0,
-    },
+        y: -15
+    }
 }
 
 const MobileNav = () => {
@@ -69,58 +43,40 @@ const MobileNav = () => {
     }, [location.pathname])
 
   return (
-    <div
+    <motion.div
         className="lg:hidden"
+        animate={open ? "open" : "closed"}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
         <MenuBtn
             action={setOpen}
             state={open}
             className="z-[1000]"
-        />
-
-        <AnimatePresence>
-            {open &&
-            <>
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-screen w-screen bg-background origin-top z-50 flex justify-center items-center"
-                variants={menuTopVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            >
-                <div className="uppercase text-center flex flex-col gap-4">
-                    {pages.map((page) => (
-                        <motion.div
-                            key={page.title}
-                            className=""
-                            variants={linksVariants}
-                            initial='initial'
-                            animate='animate'
-                            exit='exit'
-                        >
-                            <Link
-                                to={page.href}
-                                className={cn(buttonVariants({ variant: 'link' }), "font-bold text-4xl text-muted-foreground hover:text-primary")}
-                                onClick={() => setOpen(false)}
-                            >
-                                {page.title}
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
-            </motion.div>
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-screen bg-black origin-top"
-                variants={menuBottomVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            />
-            </>}
-        </AnimatePresence>
-    </div>
+        >
+        <motion.ul
+            initial={wrapperVariants.closed}
+            variants={wrapperVariants}
+            // style={{ translateX: "-50%" }}
+            className="uppercase text-center absolute top-12 right-0 w-auto bg-[#0f0f0f] p-4 rounded origin-top z-50 justify-center items-center"
+        >
+            {pages.map((page) => (
+                <motion.li
+                    key={page.title}
+                    className=""
+                    variants={linksVariants}
+                >
+                    <Link
+                        to={page.href}
+                        className={cn(buttonVariants({ variant: 'link' }), "font-bold text-lg p-0 text-muted-foreground hover:text-primary")}
+                        onClick={() => setOpen(false)}
+                    >
+                        {page.title}
+                    </Link>
+                </motion.li>
+            ))}
+        </motion.ul>
+        </MenuBtn>
+    </motion.div>
   )
 }
 
