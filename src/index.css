@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .clip-polygon {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
 
   @layer base {
     :root {

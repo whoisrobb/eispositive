@@ -1,4 +1,5 @@
 import useSplitText from "../hooks/useSplitText";
+import { motion } from "framer-motion";
 
 type PageShellProps = {
     title: string;
@@ -7,14 +8,39 @@ type PageShellProps = {
     source: string;
 };
 
+const variants = {
+    initial: {
+        opacity: 0,
+        // y: '100%'
+    },
+    animate: {
+        opacity: 1,
+        // y: 0
+    }
+};
+
 const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
-    const titleText = useSplitText({ text: title });
+    const titleText = useSplitText(title, "letter");
+    
   return (
     <div>
         <div className="md:h-[75vh] h-[50vh] flex flex-col justify-center items-center text-center">
             <div className="max-w-[50rem] space-y-4">
-                <h1 className="font-anton lg:text-8xl text-6xl uppercase" id='title'>{titleText}</h1>
-                <p className="text-muted-foreground">{subtitle}</p>
+                <div
+                    // style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}
+                    className="font-anton lg:text-8xl text-6xl uppercase clip-polygon flex justify-center"
+                >
+                    {titleText}
+                </div>
+                <motion.p
+                    className="text-muted-foreground clip-polygon"
+                    variants={variants}
+                    initial="initial"
+                    animate="animate"
+                    transition={{ duration: 0.5, delay: .7 }}
+                >
+                    {subtitle}
+                </motion.p>
             </div>
         </div>
 

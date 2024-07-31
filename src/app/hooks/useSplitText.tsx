@@ -1,46 +1,48 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-
-type SplitTextProps = HTMLAttributes<HTMLDivElement> & {
-    text: string;
-};
 
 const variants = {
     initial: {
-        opacity: 0,
+        // opacity: 0,
         y: '100%'
     },
     animate: (index: number) => ({
-        opacity: 1,
+        // opacity: 1,
         y: 0,
         transition: {
-            delay: 0.2 * index
+            delay: 0.05 * index
         }
     })
 };
 
-const useSplitText = ({ text, className }: SplitTextProps) => {
+type SplitBy = 'letter' | 'word';
+
+const useSplitText = (text: string, splitBy: SplitBy = 'letter') => {
   // Ensure text is a string
   if (typeof text !== 'string') {
     console.error('useSplitText: expected text to be a string.');
     return [];
   }
 
-  // Split the text into characters and wrap each character in a span
+  // Split the text based on the splitBy parameter
   return React.useMemo(() => {
-    return text.split('').map((char, index) => (
-        <motion.span
-            key={index}
-            className={className}
-            variants={variants}
-            initial='initial'
-            animate='animate'
-            custom={index + 1}
-        >
-            {char}
-        </motion.span>
+    const elements = splitBy === 'letter' 
+      ? text.split('') 
+      : text.split(' ').map((word, index, array) => word + (index < array.length - 1 ? ' ' : ''));
+
+    return elements.map((char, index) => (
+      <motion.div
+        key={index}
+        variants={variants}
+        initial="initial"
+        animate="animate"
+        custom={index + 1}
+        // transition={{ duration: 2 }}
+      >
+        {splitBy === 'letter' && char === ' ' ? '\u00A0' : char}
+      </motion.div>
     ));
-  }, [text, className]);
+  }, [text, splitBy]);
 }
 
 export default useSplitText;
