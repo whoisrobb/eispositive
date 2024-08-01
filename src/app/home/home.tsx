@@ -7,13 +7,31 @@ import { CarouselComponent } from './_components/carousel';
 import { CarouselItem } from '@/components/ui/carousel';
 import CollectionCard from './_components/collection-card';
 import ProductCard from './_components/product-card';
+import { motion } from 'framer-motion';
+
+const variants = {
+  initial: {
+    opacity: 0,
+    y: '50px'
+  },
+  animate: {
+    opacity: 1,
+    y: 0
+  }
+}
 
 const Home = () => {
   return (
     <div className='space-y-8'>
       <div className="h-screen flex py-4 items-center justify-center">
 
-        <div className="overflow-hidden rounded-lg h-full w-full relative">
+        <motion.div
+          className="overflow-hidden rounded-lg h-full w-full relative"
+          variants={variants}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: .5 }}
+        >
           <video
             src={'https://utfs.io/f/87297fba-a156-42bb-8b84-f02284499d67-k2j0s8.mp4'}
             className='object-cover h-[100%] w-[100%]'
@@ -24,7 +42,7 @@ const Home = () => {
 
           <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent" />
           <LandingContent />
-        </div>
+        </motion.div>
       </div>
       <Intro />
       <ShopLanding />

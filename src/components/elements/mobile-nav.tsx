@@ -36,7 +36,11 @@ const linksVariants = {
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
-    const location = useLocation()
+    const location = useLocation();
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     useEffect(() => {
         setOpen(false);
@@ -68,7 +72,7 @@ const MobileNav = () => {
                     <Link
                         to={page.href}
                         className={cn(buttonVariants({ variant: 'link' }), "font-bold text-lg p-0 text-muted-foreground hover:text-primary")}
-                        onClick={() => setOpen(false)}
+                        onClick={() => { setOpen(false); handleScrollToTop() }}
                     >
                         {page.title}
                     </Link>
