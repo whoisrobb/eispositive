@@ -3,7 +3,7 @@ import { buttonVariants } from "../ui/button";
 import { useEffect, useState } from "react";
 import { pages } from "@/config/pages";
 import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import MenuBtn from "../ui/haburger-menu/menu-btn";
 
 const wrapperVariants = {

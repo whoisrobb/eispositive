@@ -1,10 +1,9 @@
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Logo from './logo';
-import { Button } from '../ui/button';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
 import DesktopNav from './desktop-nav';
 import MobileNav from './mobile-nav';
+import CartSheet from '../cart/cart-sheet';
 
 const Header = () => {
     const [hidden, setHidden] = useState(false);
@@ -37,15 +36,9 @@ const Header = () => {
         <DesktopNav />
         <MobileNav />
 
-        <Button
-            variant="expandIcon"
-            Icon={ArrowRightIcon}
-            iconPlacement="right"
-            className='bg-primary hidden lg:flex'
-        >
-            Join us
-        </Button>
-
+        <div className="flex items-center gap-4">
+            <CartSheet />
+        </div>
     </motion.header>
   )
 }

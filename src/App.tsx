@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import { AnimatePresence } from "framer-motion"
+import CartProvider from "./components/cart/cart-provider"
 
 function App() {
   const location = useLocation();
@@ -27,20 +28,22 @@ function App() {
     requestAnimationFrame(raf)
   }, []);
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="community" element={<Community />} />
-          <Route path="eplustv" element={<EplusTv />} />
-          <Route path="share-your-story" element={<ShareYourStory />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="testimonials" element={<Testimonials />} />
-          <Route path="nav" element={<NavTest />} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <CartProvider>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="community" element={<Community />} />
+            <Route path="eplustv" element={<EplusTv />} />
+            <Route path="share-your-story" element={<ShareYourStory />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="testimonials" element={<Testimonials />} />
+            <Route path="nav" element={<NavTest />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+    </CartProvider>
   )
 }
 

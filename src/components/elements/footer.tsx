@@ -1,7 +1,7 @@
 import { pages } from "@/config/pages";
 import SiteShell from "../shells/site-shell";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { buttonVariants } from "../ui/button";
 import EmailForm from "./email-form";
 import { Accordion, AccordionItem } from "../ui/accordion";

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { HTMLAttributes, ReactNode } from "react";
 import { Separator } from "../ui/separator";
 import useSplitText from "@/app/hooks/useSplitText";

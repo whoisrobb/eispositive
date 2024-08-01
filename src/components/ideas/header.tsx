@@ -2,7 +2,7 @@ import { pages } from "@/config/pages";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Link } from "react-router-dom";
 import Logo from "../elements/logo";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { useLocation } from 'react-router-dom';
 import SiteShell from "../shells/site-shell";
 import MobileNav from "../elements/mobile-nav";

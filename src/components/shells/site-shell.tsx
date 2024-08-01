@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { HTMLAttributes, ReactNode } from "react";
 
 type SiteShellProps = HTMLAttributes<HTMLDivElement> & {

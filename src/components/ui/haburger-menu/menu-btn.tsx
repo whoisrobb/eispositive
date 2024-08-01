@@ -1,7 +1,7 @@
 import { Dispatch, HTMLAttributes, ReactNode, SetStateAction } from "react";
 import './menu-css.css'
 import { Button } from "../button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 
 type MenuBtnProps = HTMLAttributes<HTMLDivElement> & {
     action: Dispatch<SetStateAction<boolean>>;

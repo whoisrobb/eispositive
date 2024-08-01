@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/utils";
 import { HTMLAttributes } from "react";
 import ContentShell from "@/components/shells/content-shell";
 
