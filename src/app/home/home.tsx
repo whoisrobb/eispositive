@@ -56,7 +56,7 @@ const Home = () => {
             {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <CollectionCard className='lg:w-96 md:w-80 w-72' />
+                <CollectionCard className='lg:w-96 md:w-80 w-[15rem]' />
               </div>
             </CarouselItem>
             ))}
@@ -73,7 +73,7 @@ const Home = () => {
             {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <ProductCard className='lg:w-96 md:w-80 w-72' />
+                <ProductCard className='lg:w-96 md:w-80 w-[15rem]' />
               </div>
             </CarouselItem>
             ))}
