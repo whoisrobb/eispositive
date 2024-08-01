@@ -46,7 +46,7 @@ const Layout = () => {
         <Header />
         
         <motion.div
-          className="border absolute top-0 left-0 bottom-0 right-0 bg-background origin-bottom z-[50]"
+          className="absolute top-0 left-0 bottom-0 right-0 bg-background origin-bottom z-[50]"
           variants={variants}
           initial="initial"
           animate="animate"
