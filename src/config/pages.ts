@@ -8,6 +8,10 @@ export const pages = [
         href: '/about'
     },
     {
+        title: 'e+ kids',
+        href: 'https://epluskids.org'
+    },
+    {
         title: 'E+ TV',
         href: '/eplustv'
     },
@@ -22,9 +26,5 @@ export const pages = [
     {
         title: 'E+ Testimonials',
         href: '/testimonials'
-    },
-    {
-        title: 'Share your story',
-        href: '/share-your-story'
-    },
+    }
 ]
