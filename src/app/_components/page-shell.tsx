@@ -19,6 +19,17 @@ const variants = {
     }
 };
 
+const mediaVariants = {
+    initial: {
+      opacity: 0,
+      y: '50px'
+    },
+    animate: {
+      opacity: 1,
+      y: 0
+    }
+  }
+
 const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
     const titleText = useSplitText(title, "letter");
     
@@ -45,7 +56,13 @@ const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
         </div>
 
         <div className="">
-            <div className="overflow-hidden rounded-lg md:h-full h-[75vh] w-full">
+            <motion.div
+                className="overflow-hidden rounded-lg md:h-full h-[75vh] w-full"
+                variants={mediaVariants}
+                initial="initial"
+                animate="animate"
+                transition={{ duration: .5, delay: 0.8 }}
+            >
                 {type === 'video' ?
                 <video
                     src={source}
@@ -59,7 +76,7 @@ const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
                     src={source}
                     className='object-cover h-[100%] w-[100%]'
                 />}
-            </div>
+            </motion.div>
         </div>
     </div>
   )

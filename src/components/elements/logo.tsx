@@ -9,8 +9,8 @@ const Logo = ({ className }: HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <Link
-      to={'/'}
-      onClick={handleScrollToTop}
+        to={'/'}
+        onClick={handleScrollToTop}
     >
         <img
             src="/images/EIP-Logo-Vector.png"
