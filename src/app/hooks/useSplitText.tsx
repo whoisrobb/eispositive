@@ -35,7 +35,10 @@ const useSplitText = (text: string, splitBy: SplitBy = 'letter') => {
         key={index}
         variants={variants}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
+        viewport={{
+          once: true
+        }}
         custom={index + 1}
         // transition={{ duration: 2 }}
       >
