@@ -41,6 +41,10 @@ const linkItemsVariants = {
 const DesktopNav = () => {
     const [open, setOpen] = useState(false);
     const menuRef = useRef(null)
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   
     const handleClickOutside = () => {
         setOpen(false);
@@ -78,7 +82,7 @@ const DesktopNav = () => {
                         <Link
                             to={page.href}
                             className="font-anton capitalize"
-                            onClick={() => setOpen(false)}
+                            onClick={() => {setOpen(false); handleScrollToTop()}}
                         >
                             {page.title}
                         </Link>
