@@ -5,8 +5,8 @@ import ShopLanding from './shop';
 import Featured from './_components/featured';
 import { CarouselComponent } from './_components/carousel';
 import { CarouselItem } from '@/components/ui/carousel';
-import CollectionCard from './_components/collection-card';
-import ProductCard from './_components/product-card';
+import CollectionCard from '../_components/collection-card';
+import ProductCard from '../_components/product-card';
 import { motion } from 'framer-motion';
 
 const variants = {
