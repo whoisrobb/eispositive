@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <motion.header
-        className="fixed lg:left-12 md:left-6 left-3 lg:right-12 md:right-6 right-3 h-24 z-10  flex justify-between items-center"
+        className="fixed lg:left-12 md:left-6 left-3 lg:right-12 md:right-6 right-3 h-24 z-[100]  flex justify-between items-center"
         variants={{
             visible: { y: 0 },
             hidden: { y: '-100%' }

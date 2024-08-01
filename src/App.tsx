@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import Home from "./app/home/home"
 import Layout from "./app/layout"
 import About from "./app/about/about"
@@ -11,8 +11,11 @@ import NavTest from "./components/ideas/nav"
 import { useEffect } from "react"
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import { AnimatePresence } from "framer-motion"
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     const lenis = new Lenis()
     
@@ -24,18 +27,20 @@ function App() {
     requestAnimationFrame(raf)
   }, []);
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="community" element={<Community />} />
-        <Route path="eplustv" element={<EplusTv />} />
-        <Route path="share-your-story" element={<ShareYourStory />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="testimonials" element={<Testimonials />} />
-        <Route path="nav" element={<NavTest />} />
-      </Route>
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="community" element={<Community />} />
+          <Route path="eplustv" element={<EplusTv />} />
+          <Route path="share-your-story" element={<ShareYourStory />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="testimonials" element={<Testimonials />} />
+          <Route path="nav" element={<NavTest />} />
+        </Route>
+      </Routes>
+    </AnimatePresence>
   )
 }
 
