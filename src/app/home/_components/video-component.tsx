@@ -12,11 +12,12 @@ const VideoComponent = ({ source }: VideoComponentProps) => {
 
   useEffect(() => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
+        if (isPlaying) {
+            videoRef.current.play();
+        } else {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
     }
   }, [isPlaying]);
 
