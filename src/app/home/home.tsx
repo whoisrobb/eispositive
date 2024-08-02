@@ -1,13 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Intro from './intro';
-import ShopLanding from './shop';
-import Featured from './_components/featured';
-import { CarouselComponent } from './_components/carousel';
-import { CarouselItem } from '@/components/ui/carousel';
-import CollectionCard from '../_components/collection-card';
-import ProductCard from '../_components/product-card';
 import { motion } from 'framer-motion';
+import { VideoCarousel } from './video-carousel';
 
 const variants = {
   initial: {
@@ -44,42 +39,10 @@ const Home = () => {
           <LandingContent />
         </motion.div>
       </div>
+
       <Intro />
-      <ShopLanding />
-
-      <Featured
-        title='Featured collections'
-        subtitle='Browse our handpicked collections'
-      >
-        <div className="flex justify-center">
-          <CarouselComponent className='w-[calc(100%-6rem)]'>
-            {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <CollectionCard className='lg:w-96 md:w-80 w-[15rem]' />
-              </div>
-            </CarouselItem>
-            ))}
-          </CarouselComponent>
-        </div>
-      </Featured>
-
-      <Featured
-        title='Featured products'
-        subtitle='Browse our handpicked product items'
-      >
-        <div className="flex justify-center">
-          <CarouselComponent className='w-[calc(100%-6rem)]'>
-            {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="sm:basis-1 md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <ProductCard className='lg:w-96 md:w-80 w-[15rem]' />
-              </div>
-            </CarouselItem>
-            ))}
-          </CarouselComponent>
-        </div>
-      </Featured>
+      <VideoCarousel />
+      
     </div>
   )
 }
