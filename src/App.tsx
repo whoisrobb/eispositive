@@ -8,13 +8,15 @@ import ShareYourStory from "./app/share-your-story/share-your-story"
 import Shop from "./app/shop/shop"
 import Testimonials from "./app/testimonials/testimonials"
 import NavTest from "./components/ideas/nav"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import { AnimatePresence } from "framer-motion"
 import CartProvider from "./components/cart/cart-provider"
+import Preloader from "./app/preloader"
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
@@ -26,10 +28,18 @@ function App() {
     }
     
     requestAnimationFrame(raf)
+
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = 'default'
+    }, 3500)
   }, []);
   return (
     <CartProvider>
       <AnimatePresence mode="wait">
+        {isLoading ?
+        <Preloader />
+        :
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -41,7 +51,7 @@ function App() {
             <Route path="testimonials" element={<Testimonials />} />
             <Route path="nav" element={<NavTest />} />
           </Route>
-        </Routes>
+        </Routes>}
       </AnimatePresence>
     </CartProvider>
   )
