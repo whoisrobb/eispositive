@@ -2,17 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const variants = {
-    initial: {
-        // opacity: 0,
-        y: '100%'
+  initial: {
+    y: '100%',
+  },
+  animate: (index: number) => ({
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.05 * index,
     },
-    animate: (index: number) => ({
-        // opacity: 1,
-        y: 0,
-        transition: {
-            delay: 0.05 * index
-        }
-    })
+  }),
 };
 
 type SplitBy = 'letter' | 'word';
@@ -21,31 +20,42 @@ const useSplitText = (text: string, splitBy: SplitBy = 'letter') => {
   // Ensure text is a string
   if (typeof text !== 'string') {
     console.error('useSplitText: expected text to be a string.');
-    return [];
+    return null;
   }
 
   // Split the text based on the splitBy parameter
-  return React.useMemo(() => {
-    const elements = splitBy === 'letter' 
-      ? text.split('') 
-      : text.split(' ').map((word, index, array) => word + (index < array.length - 1 ? ' ' : ''));
-
-    return elements.map((char, index) => (
-      <motion.div
-        key={index}
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: true
-        }}
-        custom={index + 1}
-        // transition={{ duration: 2 }}
-      >
-        {splitBy === 'letter' && char === ' ' ? '\u00A0' : char}
-      </motion.div>
-    ));
+  const elements = React.useMemo(() => {
+    if (splitBy === 'letter') {
+      return text.split('');
+    } else {
+      return text.split(' ').reduce((acc, word, index, array) => {
+        acc.push(word);
+        // Add a space after each word except the last one
+        if (index < array.length - 1) {
+          acc.push(' ');
+        }
+        return acc;
+      }, [] as string[]);
+    }
   }, [text, splitBy]);
-}
+
+  return (
+    <div style={{ display: 'inline-block' }}>
+      {elements.map((char, index) => (
+        <motion.div
+          key={index}
+          style={{ display: 'inline-block' }}
+          variants={variants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          custom={index + 1}
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
 export default useSplitText;

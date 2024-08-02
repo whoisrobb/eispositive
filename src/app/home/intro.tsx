@@ -1,75 +1,88 @@
-import { cn } from "@/utils/utils";
-import { HTMLAttributes } from "react";
 import ContentShell from "@/components/shells/content-shell";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const p1 = '"Everything is Positive" is a movement dedicated to empowering individuals and fostering self-sustainable communities. E+ is more than a brand; it\'s a call to turn negatives into positives and inspire collective growth.'
+const p2 = 'Join the E+Positive Movement by sharing your story and connecting with others. We provide a safe platform for members to share experiences and hear from one another, helping us all become agents of change in our communities.'
+
+export const slideUp = {
+    initial: {
+        y: "100%"
+    },
+    open: (i: number) => ({
+        y: "0%",
+        transition: {duration: 0.5, delay: 0.01 * i}
+    }),
+    closed: {
+        y: "100%",
+        transition: {duration: 0.5}
+    }
+}
+
+export const opacity = {
+    initial: {
+        opacity: 0
+    },
+    open: {
+        opacity: 1,
+        transition: {duration: 0.5}
+    },
+    closed: {
+        opacity: 0,
+        transition: {duration: 0.5}
+    }
+}
 
 const Intro = () => {
+    const description = useRef(null);
+    const isInView = useInView(description);
+
   return (
     <ContentShell
         title="Who we are"
     >
 
-    <div className="relative lg:h-screen h-[175vh] py-24 flex justify-center">
-        <div className="max-w-[35rem] w-full h-full text-center space-y-4">
-            <div className="">
-                <h1 className="md:text-3xl text-2xl font-anton">
-                    Grow & Connect With Others
-                </h1>
-                <p className="">
-                    As we continue to share our stories and turn a negative into a positive, the E+Positive Movement is growing. Share your story and be a part of the E+Positive community.
-                </p>
-            </div>
+    <div ref={description} className="relative lg:h-screen h-[175vh] flex items-center justify-center">
+        <div className="space-y-4 flex gap-4 lg:flex-row flex-col justify-between w-full max-w-[900px] items-start">
+            {/* <div className="lg:max-w-[30rem] w-full text-2xl clip-polygon flex flex-wrap">
+                {paragraph1}
+            </div> */}
 
-            <div className="">
-                <h1 className="md:text-3xl text-2xl font-anton">
-                    Change Your Mindset
-                </h1>
-                <p className="">
-                    We equip our members with a safe platform to share their stories and hear of others, so that we can all become the agents of change in our community.
-                </p>
-            </div>
+            <p className="text-4xl leading-tight flex flex-wrap gap-x-2">
+                {p1.split(" ").map((word, index) => (
+                    <span className="relative inline-flex overflow-hidden" key={index}>
+                        <motion.span
+                            variants={slideUp}
+                            custom={index}
+                            animate={isInView ? 'open' : 'closed'}
+                            className="inline-block"
+                        >
+                            {word}
+                        </motion.span>
+                    </span>
+                ))}
+            </p>
+
+
+            <p className="text-muted-foreground leading-tight flex flex-wrap gap-x-2">
+                {p2.split(" ").map((word, index) => (
+                    <span className="relative inline-flex overflow-hidden" key={index}>
+                        <motion.span
+                            variants={slideUp}
+                            custom={index}
+                            animate={isInView ? 'open' : 'closed'}
+                            className="inline-block"
+                        >
+                            {word}
+                        </motion.span>
+                    </span>
+                ))}
+            </p>
         </div>
-
-        <PageImage className="md:w-[17rem] w-[10rem] lg:h-[17rem] h-[10rem] md:bottom-[5rem] lg:bottom-[1rem] bottom-[7rem] lg:right-[30rem] right-1" image={'https://utfs.io/f/608ca480-8967-43e6-92aa-bd96104b80bb-3tf0py.jpg'} />
-        <PageImage className="md:w-[17rem] w-[14rem] h-[25rem] lg:right-4 right-1 md:bottom-[20rem] lg:bottom-[4rem] bottom-[28rem]" image={'https://utfs.io/f/cf834e1e-6960-467e-9491-237033d88029-3tf0pz.jpg'} />
-        <PageVideo className="md:w-[17rem] w-[10rem] h-[20rem] lg:left-4 md:bottom-[5rem] bottom-[7rem] left-1" video={'https://utfs.io/f/23bbe487-7eab-4ad2-98e5-64184f191ba2-xwc79j.mp4'} />
     </div>
-        
+    
     </ContentShell>
   )
 }
 
 export default Intro
-
-
-type PageImageProps = HTMLAttributes<HTMLDivElement> & {
-    image: string;
-}
-
-const PageImage = ({ image, className }: PageImageProps) => {
-    return (
-        <div className={cn('absolute rounded-xl overflow-hidden', className)}>
-            <img
-                className='h-full w-full object-cover'
-                src={image}
-            />
-        </div>
-    )
-}
-
-type PageVideoProps = HTMLAttributes<HTMLDivElement> & {
-    video: string;
-}
-
-const PageVideo = ({ video, className }: PageVideoProps) => {
-    return (
-        <div className={cn('absolute rounded-lg overflow-hidden', className)}>
-            <video
-                className='h-full w-full object-cover'
-                src={video}
-                autoPlay
-                loop
-                muted
-            />
-        </div>
-    )
-}
