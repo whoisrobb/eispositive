@@ -44,7 +44,7 @@ const Intro = () => {
         title="Who we are"
     >
 
-    <div ref={description} className="relative h-screen  flex items-center justify-center">
+    <div ref={description} className="relative h-screen flex items-center justify-center">
         <div className="space-y-4 flex gap-4 lg:flex-row flex-col justify-between w-full max-w-[900px] items-start">
             <p className="text-4xl leading-tight flex flex-wrap gap-x-2">
                 {paragraph1}
