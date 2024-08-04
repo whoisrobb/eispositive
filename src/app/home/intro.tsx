@@ -1,6 +1,7 @@
 import ContentShell from "@/components/shells/content-shell";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import useSplitPara from "../hooks/useSplitPara";
 
 const p1 = '"Everything is Positive" is a movement dedicated to empowering individuals and fostering self-sustainable communities. E+ is more than a brand; it\'s a call to turn negatives into positives and inspire collective growth.'
 const p2 = 'Join the E+Positive Movement by sharing your story and connecting with others. We provide a safe platform for members to share experiences and hear from one another, helping us all become agents of change in our communities.'
@@ -37,6 +38,8 @@ const Intro = () => {
     const description = useRef(null);
     const isInView = useInView(description);
 
+    const text = useSplitPara(p1, description);
+
   return (
     <ContentShell
         title="Who we are"
@@ -49,7 +52,7 @@ const Intro = () => {
             </div> */}
 
             <p className="text-4xl leading-tight flex flex-wrap gap-x-2">
-                {p1.split(" ").map((word, index) => (
+                {/* {p1.split(" ").map((word, index) => (
                     <span className="relative inline-flex overflow-hidden" key={index}>
                         <motion.span
                             variants={slideUp}
@@ -60,7 +63,8 @@ const Intro = () => {
                             {word}
                         </motion.span>
                     </span>
-                ))}
+                ))} */}
+                {text}
             </p>
 
 
