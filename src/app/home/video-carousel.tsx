@@ -1,6 +1,8 @@
 import Marquee from "@/components/magicui/marquee";
 import VideoComponent from "./_components/video-component";
 import ContentShell from "@/components/shells/content-shell";
+import { useRef } from "react";
+import useSplitPara from "../hooks/useSplitPara";
 
 const videos = [
     'c45dbb92-95d1-4590-830c-4d91baa1c870-719jk6.mp4',
@@ -15,28 +17,33 @@ const videos = [
     'e3c4e324-257e-45d3-949e-0fcd4e89cc53-xdjjck.mp4'
 ]
 
+const text = "Discover stories of resilience and hope as our community shares how they've embraced positivity. From overcoming challenges to finding joy in everyday moments, these testimonials celebrate the power of a positive mindset in transforming life's experiences."
+
 const firstRow = videos.slice(0, videos.length / 2);
 const secondRow = videos.slice(videos.length / 2);
 
 
 export function VideoCarousel() {
+    const container = useRef(null);
+
+    const paragraph = useSplitPara(text, container);
   return (
     <ContentShell
         title="E+ Testimonials"
     >
-        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
-        <Marquee pauseOnHover className="[--duration:20s]">
-            {firstRow.map((video) => (
-            <VideoComponent key={video} source={video} />
-            ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:20s]">
-            {secondRow.map((video) => (
-            <VideoComponent key={video} source={video} />
-            ))}
-        </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+        <div ref={container} className="leading-tight flex flex-wrap gap-x-2 text-muted-foreground">{paragraph}</div>
+
+        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background">
+            <Marquee pauseOnHover className="[--duration:20s]">
+                {firstRow.map((video) => (
+                <VideoComponent key={video} source={video} />
+                ))}
+            </Marquee>
+            <Marquee reverse pauseOnHover className="[--duration:20s]">
+                {secondRow.map((video) => (
+                <VideoComponent key={video} source={video} />
+                ))}
+            </Marquee>
         </div>
     </ContentShell>
   );
