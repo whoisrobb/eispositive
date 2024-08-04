@@ -1,5 +1,3 @@
-import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Intro from './intro';
 import { motion } from 'framer-motion';
 import { VideoCarousel } from './video-carousel';
@@ -35,7 +33,7 @@ const Home = () => {
             muted
           />
 
-          <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-transparent" />
+          <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-accent-foreground to-transparent" />
           <LandingContent />
         </motion.div>
       </div>
@@ -51,23 +49,10 @@ export default Home
 
 const LandingContent = () => {
   return (
-    <div className="absolute lg:bottom-8 bottom-16 left-4 max-w-[60rem] text-[#fcfcfc] space-y-4">
-      <h1 className="font-anton lg:text-8xl md:text-6xl text-4xl">
+    <div className="absolute lg:bottom-4 lg:left-4 bottom-1/2 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:translate-y-0 -translate-y-1/2 text-background space-y-4">
+      <h1 className="font-anton uppercase w-full lg:text-[10.7vw] whitespace-nowrap text-4xl">
         Everything is Positive
       </h1>
-
-      <p className="leading-tight">
-        "Everything is Positive” is about empowering people, thus enabling their communities to become self-sustainable. “Everything is Positive” AKA (E+) is not just a brand but a movement.
-      </p>
-
-      <Button
-        variant="expandIcon"
-        Icon={ArrowRightIcon}
-        iconPlacement="right"
-        className='bg-primary'
-      >
-        Join us
-      </Button>
     </div>
   )
 }
