@@ -2,6 +2,7 @@ import Intro from './intro';
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { VideoCarousel } from './video-carousel';
 import { useRef } from 'react';
+import BlogSection from './blog-section';
 
 const variants = {
   initial: {
@@ -49,6 +50,7 @@ const Home = () => {
 
       <Intro />
       <VideoCarousel />
+      <BlogSection />
       
     </div>
   )
