@@ -34,12 +34,12 @@ export function VideoCarousel() {
         <div ref={container} className="leading-tight flex flex-wrap gap-x-2 text-muted-foreground">{paragraph}</div>
 
         <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-            <Marquee pauseOnHover className="[--duration:20s]">
+            <Marquee pauseOnHover repeat={5} className="[--duration:20s]">
                 {firstRow.map((video) => (
                 <VideoComponent key={video} source={video} />
                 ))}
             </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:20s]">
+            <Marquee reverse pauseOnHover repeat={5} className="[--duration:20s]">
                 {secondRow.map((video) => (
                 <VideoComponent key={video} source={video} />
                 ))}
