@@ -1,6 +1,7 @@
 import Intro from './intro';
-import { motion } from 'framer-motion';
+import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { VideoCarousel } from './video-carousel';
+import { useRef } from 'react';
 
 const variants = {
   initial: {
@@ -14,9 +15,17 @@ const variants = {
 }
 
 const Home = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'end start']
+  });
+
+  const offset = useTransform(scrollYProgress, [0, 1], [100, -150]);
+
   return (
     <div className='space-y-8'>
-      <div className="h-screen flex py-4 items-center justify-center">
+      <div ref={container} className="h-screen flex py-4 items-center justify-center">
 
         <motion.div
           className="overflow-hidden rounded-lg h-full w-full relative"
@@ -34,7 +43,7 @@ const Home = () => {
           />
 
           <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-accent-foreground to-transparent" />
-          <LandingContent />
+          <LandingContent offset={offset} />
         </motion.div>
       </div>
 
@@ -47,12 +56,18 @@ const Home = () => {
 
 export default Home
 
-const LandingContent = () => {
+
+type LandingContentProps = {
+  offset: MotionValue<number>;
+}
+
+const LandingContent = ({ offset }: LandingContentProps) => {
+
   return (
     <div className="absolute lg:bottom-4 lg:left-4 bottom-1/2 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:translate-y-0 -translate-y-1/2 text-background space-y-4">
-      <h1 className="font-anton uppercase w-full lg:text-[10.7vw] whitespace-nowrap text-4xl">
+      <motion.h1 style={{ y: offset }} className="font-anton uppercase w-full lg:text-[10.7vw] whitespace-nowrap text-4xl">
         Everything is Positive
-      </h1>
+      </motion.h1>
     </div>
   )
 }
