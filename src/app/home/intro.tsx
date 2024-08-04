@@ -1,5 +1,4 @@
 import ContentShell from "@/components/shells/content-shell";
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import useSplitPara from "../hooks/useSplitPara";
 
@@ -36,51 +35,23 @@ export const opacity = {
 
 const Intro = () => {
     const description = useRef(null);
-    const isInView = useInView(description);
 
-    const text = useSplitPara(p1, description);
+    const paragraph1 = useSplitPara(p1, description);
+    const paragraph2 = useSplitPara(p2, description);
 
   return (
     <ContentShell
         title="Who we are"
     >
 
-    <div ref={description} className="relative lg:h-screen h-[175vh] flex items-center justify-center">
+    <div ref={description} className="relative h-screen  flex items-center justify-center">
         <div className="space-y-4 flex gap-4 lg:flex-row flex-col justify-between w-full max-w-[900px] items-start">
-            {/* <div className="lg:max-w-[30rem] w-full text-2xl clip-polygon flex flex-wrap">
-                {paragraph1}
-            </div> */}
-
             <p className="text-4xl leading-tight flex flex-wrap gap-x-2">
-                {/* {p1.split(" ").map((word, index) => (
-                    <span className="relative inline-flex overflow-hidden" key={index}>
-                        <motion.span
-                            variants={slideUp}
-                            custom={index}
-                            animate={isInView ? 'open' : 'closed'}
-                            className="inline-block"
-                        >
-                            {word}
-                        </motion.span>
-                    </span>
-                ))} */}
-                {text}
+                {paragraph1}
             </p>
 
-
             <p className="text-muted-foreground leading-tight flex flex-wrap gap-x-2">
-                {p2.split(" ").map((word, index) => (
-                    <span className="relative inline-flex overflow-hidden" key={index}>
-                        <motion.span
-                            variants={slideUp}
-                            custom={index}
-                            animate={isInView ? 'open' : 'closed'}
-                            className="inline-block"
-                        >
-                            {word}
-                        </motion.span>
-                    </span>
-                ))}
+                {paragraph2}
             </p>
         </div>
     </div>

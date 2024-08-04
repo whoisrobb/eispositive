@@ -42,7 +42,7 @@ const Home = () => {
             muted
           />
 
-          <div className="absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-accent-foreground to-transparent" />
+          <div className="absolute top-0 bottom-0 right-0 lg:left-0 bg-gradient-to-t lg:from-accent-foreground lg:to-transparent" />
           <LandingContent offset={offset} />
         </motion.div>
       </div>
