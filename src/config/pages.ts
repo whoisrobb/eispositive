@@ -21,7 +21,7 @@ export const pages = [
     },
     {
         title: 'E+ Shop',
-        href: '/shop'
+        href: 'https://eplusshop.org'
     },
     {
         title: 'E+ Testimonials',
