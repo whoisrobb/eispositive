@@ -3,6 +3,7 @@ import Header from "@/components/elements/header"
 import SiteShell from "@/components/shells/site-shell"
 import { Outlet } from "react-router-dom"
 import { motion } from "framer-motion"
+import FooterBanner from "@/components/elements/footer-banner"
 
 const variants = {
   initial: {
@@ -42,7 +43,7 @@ const perspective = {
 
 const Layout = () => {
   return (
-    <div className="">
+    <div className="w-screen overflow-x-hidden">
         <Header />
         
         <motion.div
@@ -53,21 +54,22 @@ const Layout = () => {
           exit="exit"
           transition={{ duration: 2 }}
         />
-          <motion.div
-            className=""
-            variants={perspective}
-            initial="initial"
-            animate="animate"
-            exit="exit"
+        <motion.div
+          className=""
+          variants={perspective}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <SiteShell
+            className="mb-24"
           >
-            <SiteShell
-              className="mb-24"
-            >
-              <Outlet />
-            </SiteShell>
-          </motion.div>
+            <Outlet />
+          </SiteShell>
+        </motion.div>
 
         <Footer />
+        <FooterBanner />
     </div>
   )
 }
