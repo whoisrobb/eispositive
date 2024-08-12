@@ -39,7 +39,7 @@ const BlogSection = () => {
         >
           <BlogComponent
             image="https://utfs.io/f/130eaa9e-1ac1-440f-bcfa-152059446dab-5fvi41.png"
-            title="Everything is Positive Fashion Show: Where Style Meets Social Impact."
+            title="E+ Fashion Show: Where Style Meets Social Impact."
           />
         </Link>
       </div>
