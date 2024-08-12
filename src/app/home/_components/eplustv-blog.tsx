@@ -10,7 +10,7 @@ const EplustvBlog = () => {
 
         <div className="flex md:flex-row flex-col gap-12 justify-between items-start">
             <div
-                className="overflow-hidden md:w-full h-full md:h-auto aspect-square relative"
+                className="overflow-hidden rounded-lg md:w-full h-full md:h-auto aspect-square relative"
             >
                 <img
                     className="h-full w-full object-cover"
