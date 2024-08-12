@@ -46,6 +46,7 @@
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "^3.1.0",
     "vaul": "^0.9.1",
+    "video.js": "^8.17.2",
     "zod": "^3.23.8",
     "zustand": "^4.5.2"
   },
@@ -53,6 +54,7 @@
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/video.js": "^7.3.58",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

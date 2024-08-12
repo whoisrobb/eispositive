@@ -1,6 +1,7 @@
 import Magnetic from "@/components/elements/magnetic";
 import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect } from 'react';
+import VideoModal from "./video-modal";
 
 type VideoComponentProps = {
   source: string;
@@ -23,6 +24,10 @@ const VideoComponent = ({ source }: VideoComponentProps) => {
   }, [isPlaying]);
 
   return (
+    <VideoModal
+      videoSrc={`https://utfs.io/f/${source}`}
+      // videoSrc="https://www.youtube.com/watch?v=CTMxkDgYIkI"
+    >
     <div
       className="h-36 w-64 overflow-hidden rounded relative border"
       onMouseEnter={() => {
@@ -53,6 +58,7 @@ const VideoComponent = ({ source }: VideoComponentProps) => {
         </Magnetic>
       </div>
     </div>
+    </VideoModal>
   );
 };
 
