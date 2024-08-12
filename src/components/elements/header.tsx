@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import Logo from './logo';
 import DesktopNav from './desktop-nav';
 import MobileNav from './mobile-nav';
-import CartSheet from '../cart/cart-sheet';
+import { ContactForm } from './contact-form';
 
 const Header = () => {
     const [hidden, setHidden] = useState(false);
@@ -37,7 +37,7 @@ const Header = () => {
         <MobileNav />
 
         <div className="flex items-center gap-4">
-            <CartSheet />
+            <ContactForm />
         </div>
     </motion.header>
   )
