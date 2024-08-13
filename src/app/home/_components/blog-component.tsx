@@ -5,9 +5,10 @@ import { useState } from "react";
 type BlogComponentProps = {
     image: string;
     title: string;
+    subtitle: string;
 }
 
-const BlogComponent = ({ image, title }: BlogComponentProps) => {
+const BlogComponent = ({ image, title, subtitle }: BlogComponentProps) => {
     const [isHovered, setIsHovered] = useState(false);
   return (
     <div
@@ -40,7 +41,7 @@ const BlogComponent = ({ image, title }: BlogComponentProps) => {
             </div>
         </div>
         <div className="p-4 border space-y-4 w-full">
-            <p className="font-anton uppercase text-muted-foreground">behind the scenes</p>
+            <p className="font-anton uppercase text-muted-foreground">{subtitle}</p>
             <h1 className="font-bold md:text-4xl text-lg leading-tight">{title}</h1>
             <p className="font-anton text-muted-foreground">10min read</p>
         </div>

@@ -20,6 +20,7 @@ const BlogSection = () => {
           <BlogComponent
             image="https://utfs.io/f/a0b5c9b0-2fc6-48fc-a118-3a42c2b4d32d-13a33y.png"
             title="E+ TV: Explore uplifting videos that celebrate positivity."
+            subtitle="positive thoughts only"
           />
         </Link>
 
@@ -30,6 +31,7 @@ const BlogSection = () => {
           <BlogComponent
             image="https://utfs.io/f/9ce75893-0ab4-4c19-b53f-807439a44083-i8j314.png"
             title="E+ Unsung Heroes -  Series Celebrating Hidden Figures."
+            subtitle="Always moving forward"
           />
         </Link>
 
@@ -40,6 +42,7 @@ const BlogSection = () => {
           <BlogComponent
             image="https://utfs.io/f/130eaa9e-1ac1-440f-bcfa-152059446dab-5fvi41.png"
             title="E+ Fashion Show: Where Style Meets Social Impact."
+            subtitle="Change your mindset"
           />
         </Link>
       </div>
