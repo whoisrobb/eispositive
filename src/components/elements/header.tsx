@@ -3,7 +3,8 @@ import { useRef, useState } from 'react';
 import Logo from './logo';
 import DesktopNav from './desktop-nav';
 import MobileNav from './mobile-nav';
-import { ContactForm } from './contact-form';
+import { Button } from '../ui/button';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 const Header = () => {
     const [hidden, setHidden] = useState(false);
@@ -37,7 +38,13 @@ const Header = () => {
         <MobileNav />
 
         <div className="flex items-center gap-4">
-            <ContactForm />
+            <Button
+                variant="expandIcon"
+                Icon={ArrowRightIcon}
+                iconPlacement="right"
+            >
+                Donate
+            </Button>
         </div>
     </motion.header>
   )

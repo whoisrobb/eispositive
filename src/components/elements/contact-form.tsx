@@ -31,10 +31,14 @@ import {
 } from "@/components/ui/form"
 import { useMediaQuery } from "usehooks-ts"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 import { Textarea } from "../ui/textarea"
 
-export const ContactForm = () => {
+type ContactFormTrigger = {
+    children: ReactNode;
+};
+
+export const ContactForm = ({ children }: ContactFormTrigger) => {
   const [open, setOpen] = useState(false)
   const isDesktop = useMediaQuery("(min-width: 768px)")
 
@@ -42,13 +46,7 @@ export const ContactForm = () => {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-            <Button
-                variant="expandIcon"
-                Icon={ArrowRightIcon}
-                iconPlacement="right"
-            >
-                Contact
-            </Button>
+            {children}
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
