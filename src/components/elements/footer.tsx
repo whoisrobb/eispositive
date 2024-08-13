@@ -13,6 +13,10 @@ import payment3 from '../../../public/images/paypal.png';
 import payment4 from '../../../public/images/payoneer.png';
 import payment5 from '/images/skrill.png';
 import { ModeToggle } from "../themes/mode-toggle";
+import YouTubeIcon from "@/app/icons/youtube";
+import InstagramIcon from "@/app/icons/instagram";
+import FacebookIcon from "@/app/icons/facebook";
+// import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 
 const Footer = () => {
@@ -32,12 +36,14 @@ const Footer = () => {
         <SiteShell
             className="space-y-8"
         >
-            <div className="flex md:flex-row justify-between gap-y-8 flex-col-reverse">
+            <div className="flex md:flex-row justify-around gap-y-8 flex-col-reverse">
 
                 <div className="md:space-y-4">
                     {/* Desktop item */}
                     <div className="hidden md:block">
-                        <h1 className="text-xl font-bold">Help and Info</h1>
+                    <h1 className="text-4xl font-anton">
+                        Help & Info
+                    </h1>
                         <div className="flex flex-col capitalize items-start">
                             {helpAndInfo.map(page => (
                                 <Link
@@ -72,48 +78,9 @@ const Footer = () => {
                     </Accordion>
                 </div>
 
-                <div className="md:space-y-4">
-                    {/* Desktop */}
-                    <div className="hidden md:block">
-                        <h1 className="text-xl font-bold">
-                            Shop
-                        </h1>
-                        <div className="flex flex-col capitalize items-start">
-                            {helpAndInfo.map(page => (
-                                <Link
-                                    to={page.href}
-                                    key={page.title}
-                                    className={cn(buttonVariants({ variant: "link" }), 'text-muted-foreground p-0 h-8 hover:text-[#fcfcfc]')}
-                                >
-                                    {page.title}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Mobile items */}
-                    <Accordion type="multiple" className="md:hidden">
-                        <AccordionItem value="item-1">
-                        <AccordionTrigger>
-                            <h1 className="text-xl font-bold">Shop</h1>
-                        </AccordionTrigger>
-                        <AccordionContent className="flex flex-col capitalize items-start">
-                            {helpAndInfo.map((page) => (
-                                <Link
-                                    to={page.href}
-                                    key={page.title}
-                                    className={cn(buttonVariants({ variant: "link" }), 'text-muted-foreground p-0 h-8 hover:text-[#fcfcfc]')}
-                                >
-                                    {page.title}
-                                </Link>
-                            ))}
-                        </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                </div>
 
                 <div className="md:space-y-4">
-                    <h1 className="text-xl font-bold">
+                    <h1 className="text-4xl font-anton">
                         Contact
                     </h1>
                     <div className="flex flex-col items-start">
@@ -130,16 +97,24 @@ const Footer = () => {
                         >
                             +1 5263 237902
                         </Link>
-                        <div className="w-full flex gap-2">
-                            <Link to={'https://www.facebook.com'} className="h-10 aspect-square rounded-full border hover:border-[#fcfcfc]" />
-                            <Link to={'https://www.instagram.com'} className="h-10 aspect-square rounded-full border hover:border-[#fcfcfc]" />
-                            <Link to={'https://www.youtube.com'} className="h-10 aspect-square rounded-full border hover:border-[#fcfcfc]" />
+                        <div className="w-full flex items-center gap-4">
+                            <Link to={'https://www.facebook.com'} target="_blank">
+                                <FacebookIcon className="size-7" />
+                            </Link>
+                            
+                            <Link to={'https://www.instagram.com'} target="_blank">
+                                <InstagramIcon className="size-6" />
+                            </Link>
+
+                            <Link to={'https://www.youtube.com'} target="_blank">
+                                <YouTubeIcon className="size-11" />
+                            </Link>
                         </div>
                     </div>
 
                 </div>
                 <div className="md:space-y-4 space-y-2">
-                    <h1 className="text-xl font-bold">You have feedback?</h1>
+                <h1 className="text-4xl font-anton">You have feedback?</h1>
                     <EmailForm />
                     <ModeToggle />
                 </div>
