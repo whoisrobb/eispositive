@@ -18,16 +18,16 @@ const EplusBrand = () => {
     <ContentShell
         title="E+ brand film"
     >
-        <div className="flex gap-8" ref={container}>
+        <div className="flex md:flex-row flex-col gap-8" ref={container}>
             <div className="">
                 <VideoComponent
                     source="https://utfs.io/f/a84cba26-9acd-4516-8ef7-cb14e4a1cd0d-iksgw4.mp4" 
-                    className="w-[40rem] h-[25rem]"
+                    className="lg:w-[40rem] md:w-[22rem] w-[full] lg:h-[25rem] h-[13.5rem]"
                 />
             </div>
 
             <div className="space-y-4">
-                <h1 className="text-4xl font-anton leading-tight flex flex-wrap gap-x-2">{title}</h1>
+                <h1 className="md:text-4xl text-xl font-anton leading-tight flex flex-wrap gap-x-2">{title}</h1>
                 <p className="text-muted-foreground leading-tight flex flex-wrap gap-x-2">{subtitle}</p>
                 <p className="font-anton leading-tight flex flex-wrap gap-x-1">{bill}</p>
             </div>
