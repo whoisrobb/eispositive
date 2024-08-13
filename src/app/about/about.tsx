@@ -12,7 +12,7 @@ const About = () => {
       <PageShell
         title={title}
         subtitle={subtitle}
-        source={'https://utfs.io/f/87297fba-a156-42bb-8b84-f02284499d67-k2j0s8.mp4'}
+        source={'https://utfs.io/f/0322892d-e452-4547-8ee4-70be6f38731e-vilrxf.mp4'}
         type="video"
       />
 

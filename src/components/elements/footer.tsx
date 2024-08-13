@@ -13,9 +13,9 @@ import payment3 from '../../../public/images/paypal.png';
 import payment4 from '../../../public/images/payoneer.png';
 import payment5 from '/images/skrill.png';
 import { ModeToggle } from "../themes/mode-toggle";
-import YouTubeIcon from "@/app/icons/youtube";
-import InstagramIcon from "@/app/icons/instagram";
-import FacebookIcon from "@/app/icons/facebook";
+import YouTubeIcon from "@/components/icons/youtube";
+import InstagramIcon from "@/components/icons/instagram";
+import FacebookIcon from "@/components/icons/facebook";
 // import { InstagramLogoIcon } from "@radix-ui/react-icons";
 
 
