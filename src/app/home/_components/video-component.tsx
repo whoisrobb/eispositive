@@ -48,12 +48,12 @@ const VideoComponent = ({ source, className }: VideoComponentProps) => {
         muted
       />
       <div
-        className={`absolute h-16 aspect-square rounded-full top-[2.5rem] left-[6rem] transition-transform duration-300 ${
+        className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
           isHovered ? 'scale-100' : 'scale-0'
         }`}
       >
         <Magnetic>
-          <Button className="h-16 aspect-square rounded-full  flex items-center justify-center">
+          <Button className="h-16 aspect-square rounded-full flex items-center justify-center">
             Play
           </Button>
         </Magnetic>
