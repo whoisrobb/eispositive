@@ -3,6 +3,7 @@ import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { VideoCarousel } from './video-carousel';
 import { useRef } from 'react';
 import BlogSection from './blog-section';
+import EplusBrand from './eplus-brand';
 
 const variants = {
   initial: {
@@ -50,6 +51,7 @@ const Home = () => {
 
       <Intro />
       <VideoCarousel />
+      <EplusBrand />
       <BlogSection />
       
     </div>

@@ -1,13 +1,14 @@
 import Magnetic from "@/components/elements/magnetic";
 import { Button } from "@/components/ui/button";
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, HTMLAttributes } from 'react';
 import VideoModal from "./video-modal";
+import { cn } from "@/utils/utils";
 
-type VideoComponentProps = {
+type VideoComponentProps = HTMLAttributes<HTMLDivElement> & {
   source: string;
 };
 
-const VideoComponent = ({ source }: VideoComponentProps) => {
+const VideoComponent = ({ source, className }: VideoComponentProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -29,7 +30,7 @@ const VideoComponent = ({ source }: VideoComponentProps) => {
       // videoSrc="https://www.youtube.com/watch?v=CTMxkDgYIkI"
     >
     <div
-      className="h-36 w-64 overflow-hidden rounded relative border"
+      className={cn("h-36 w-64 overflow-hidden rounded relative border", className)}
       onMouseEnter={() => {
         setIsPlaying(true);
         setIsHovered(true);
