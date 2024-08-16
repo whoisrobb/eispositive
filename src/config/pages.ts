@@ -15,10 +15,10 @@ export const pages = [
         title: 'E+ TV',
         href: '/eplustv'
     },
-    {
-        title: 'E+ Community',
-        href: '/community'
-    },
+    // {
+    //     title: 'E+ Community',
+    //     href: '/community'
+    // },
     {
         title: 'E+ Shop',
         href: 'https://eplusshop.org'
