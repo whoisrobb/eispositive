@@ -10,7 +10,6 @@ import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import { AnimatePresence } from "framer-motion"
 import Preloader from "./app/preloader"
-import EplustvBlog from "./app/home/_components/eplustv-blog"
 import Page from "./app/home/blog-page/page"
 
 function App() {

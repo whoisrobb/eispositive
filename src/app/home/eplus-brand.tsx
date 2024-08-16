@@ -13,7 +13,7 @@ const EplusBrand = () => {
     const title = useSplitPara(p1, container);
     const subtitle = useSplitPara(p2, container);
     const bill = useSplitPara(name, container);
-    // a6c2328a-0f7d-4b79-bfed-e1f8ec11c4f4-6hgn0y.mp4
+    
   return (
     <ContentShell
         title="E+ brand film"
