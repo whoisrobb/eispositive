@@ -6,9 +6,10 @@ type BlogComponentProps = {
     image: string;
     title: string;
     subtitle: string;
+    read: string;
 }
 
-const BlogComponent = ({ image, title, subtitle }: BlogComponentProps) => {
+const BlogComponent = ({ image, title, subtitle , read}: BlogComponentProps) => {
     const [isHovered, setIsHovered] = useState(false);
   return (
     <div
@@ -43,7 +44,7 @@ const BlogComponent = ({ image, title, subtitle }: BlogComponentProps) => {
         <div className="p-4 border space-y-4 w-full">
             <p className="font-anton uppercase text-muted-foreground">{subtitle}</p>
             <h1 className="font-bold md:text-4xl text-lg leading-tight">{title}</h1>
-            <p className="font-anton text-muted-foreground">10min read</p>
+            <p className="font-anton text-muted-foreground">{read}</p>
         </div>
 
     </div>

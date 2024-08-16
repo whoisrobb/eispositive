@@ -1,6 +1,7 @@
 import ContentShell from "@/components/shells/content-shell";
 import BlogComponent from "./_components/blog-component";
 import { Link } from "react-router-dom";
+import data from "./blog-page/blog-data.json";
 
 const BlogSection = () => {
   const handleScrollToTop = () => {
@@ -13,38 +14,18 @@ const BlogSection = () => {
       title="Blog posts"
     >
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+        {data.map((blog, index) => (
         <Link
-          to={'/blog/eplustv'}
+          to={`/blog/${index}`}
           onClick={handleScrollToTop}
         >
           <BlogComponent
-            image="https://utfs.io/f/a0b5c9b0-2fc6-48fc-a118-3a42c2b4d32d-13a33y.png"
-            title="E+ TV: Explore uplifting videos that celebrate positivity."
-            subtitle="positive thoughts only"
+            image={blog.image}
+            title={blog.title}
+            subtitle={blog.subtitle}
+            read={blog.read}
           />
-        </Link>
-
-        <Link
-          to={'/blog/eplustv'}
-          onClick={handleScrollToTop}
-        >
-          <BlogComponent
-            image="https://utfs.io/f/9ce75893-0ab4-4c19-b53f-807439a44083-i8j314.png"
-            title="E+ Unsung Heroes -  Series Celebrating Hidden Figures."
-            subtitle="Always moving forward"
-          />
-        </Link>
-
-        <Link
-          to={'/blog/eplustv'}
-          onClick={handleScrollToTop}
-        >
-          <BlogComponent
-            image="https://utfs.io/f/130eaa9e-1ac1-440f-bcfa-152059446dab-5fvi41.png"
-            title="E+ Fashion Show: Where Style Meets Social Impact."
-            subtitle="Change your mindset"
-          />
-        </Link>
+        </Link>))}
       </div>
     </ContentShell>
   )
