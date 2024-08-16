@@ -13,7 +13,7 @@ const EplusBrand = () => {
     const title = useSplitPara(p1, container);
     const subtitle = useSplitPara(p2, container);
     const bill = useSplitPara(name, container);
-
+    // a6c2328a-0f7d-4b79-bfed-e1f8ec11c4f4-6hgn0y.mp4
   return (
     <ContentShell
         title="E+ brand film"
@@ -21,7 +21,7 @@ const EplusBrand = () => {
         <div className="flex md:flex-row flex-col gap-8" ref={container}>
             <div className="">
                 <VideoComponent
-                    source="https://utfs.io/f/a84cba26-9acd-4516-8ef7-cb14e4a1cd0d-iksgw4.mp4" 
+                    source="a84cba26-9acd-4516-8ef7-cb14e4a1cd0d-iksgw4.mp4"
                     className="lg:w-[40rem] md:w-[22rem] w-[full] lg:h-[25rem] h-[13.5rem]"
                 />
             </div>
