@@ -1,5 +1,6 @@
 import PageShell from "../_components/page-shell";
 import FeaturedStories from "./featured-stories";
+import ShareYourStory from "./share-your-story";
 
 const title = 'e+ testimonials'
 const subtitle = 'Read stories from people who have experienced the impact of positivity. These testimonials showcase the power of kindness and its ripple effects.'
@@ -15,6 +16,7 @@ const Testimonials = () => {
       />
 
       <FeaturedStories />
+      <ShareYourStory />
     </div>
   )
 }
