@@ -37,7 +37,7 @@ const Header = () => {
         <DesktopNav />
         <MobileNav />
 
-        <div className="flex items-center gap-4">
+        <div className="md:flex hidden items-center gap-4">
             <Button
                 variant="expandIcon"
                 Icon={ArrowRightIcon}
