@@ -42,7 +42,15 @@ const Intro = () => {
   return (
     <ContentShell
         title="Who we are"
+        className="relative"
     >
+    <div className="absolute top-0 left-0 h-[50%] w-full -z-10">
+        <img
+            src={'https://utfs.io/f/cc802fe8-212a-4e39-aa4b-ff0de700dd27-wdv566.png'}
+            className="h-full w-full opacity-25 object-cover"
+            alt=""
+        />
+    </div>
 
     <div ref={description} className="relative h-screen flex items-center justify-center">
         <div className="space-y-4 flex gap-4 lg:flex-row flex-col justify-between w-full max-w-[900px] items-start">
