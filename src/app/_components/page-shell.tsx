@@ -77,6 +77,15 @@ const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
                     className='object-cover h-[100%] w-[100%]'
                 />}
             </motion.div>
+
+        </div>
+
+        <div className="absolute top-48 left-0 h-96 w-full -z-10">
+            <img
+                src={'https://utfs.io/f/cc802fe8-212a-4e39-aa4b-ff0de700dd27-wdv566.png'}
+                className="h-full w-full opacity-25 object-cover"
+                alt=""
+            />
         </div>
     </div>
   )
