@@ -62,7 +62,7 @@ const DesktopNav = () => {
             {open &&
             <motion.div
             // className="rounded-full bg-[#0f0f0f] flex items-center justify-center gap-4 py-4 px-8 absolute top-12 left-80 right-80"
-                className="rounded-full bg-[#0f0f0f] text-[#fcfcfc] flex items-center justify-center gap-4 py-4 px-8 absolute top-16 left-[30%] w-auto"
+                className="rounded-full bg-[#0f0f0f] text-[#fcfcfc] flex items-center justify-center gap-4 py-4 px-8 absolute top-16 left-[35%] w-auto"
                 variants={menuOpenVariants}
                 initial="initial"
                 animate="animate"
