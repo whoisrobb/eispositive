@@ -15,6 +15,13 @@ const About = () => {
         source={'https://utfs.io/f/0322892d-e452-4547-8ee4-70be6f38731e-vilrxf.mp4'}
         type="video"
       />
+      <div className="h-96 w-full -z-10">
+          <img
+              src={'https://utfs.io/f/cc802fe8-212a-4e39-aa4b-ff0de700dd27-wdv566.png'}
+              className="h-full w-full object-cover"
+              alt=""
+          />
+      </div>
 
       <Mission />
       <StoryAndValues />

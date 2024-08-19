@@ -80,13 +80,13 @@ const PageShell = ({ title, subtitle, type, source }: PageShellProps) => {
 
         </div>
 
-        <div className="absolute top-48 left-0 h-96 w-full -z-10">
+        {/* <div className="absolute top-48 left-0 h-96 w-full -z-10">
             <img
                 src={'https://utfs.io/f/cc802fe8-212a-4e39-aa4b-ff0de700dd27-wdv566.png'}
                 className="h-full w-full opacity-25 object-cover"
                 alt=""
             />
-        </div>
+        </div> */}
     </div>
   )
 }
