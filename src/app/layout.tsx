@@ -43,7 +43,7 @@ const perspective = {
 
 const Layout = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
         <Header />
         
         <motion.div

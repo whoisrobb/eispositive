@@ -3,6 +3,7 @@ import VideoComponent from "./_components/video-component";
 import ContentShell from "@/components/shells/content-shell";
 import { useRef } from "react";
 import useSplitPara from "../hooks/useSplitPara";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const videos = [
     'c45dbb92-95d1-4590-830c-4d91baa1c870-719jk6.mp4',
@@ -25,25 +26,37 @@ const secondRow = videos.slice(videos.length / 2);
 
 export function VideoCarousel() {
     const container = useRef(null);
+    const scrollContainer = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ['start start', 'end end']
+    });
 
     const paragraph = useSplitPara(text, container);
+    const scale3 = useTransform(scrollYProgress, [0, 1], [1, 3])
   return (
     <ContentShell
         title="E+ Testimonials"
     >
         <div ref={container} className="leading-tight flex flex-wrap gap-x-2 text-muted-foreground">{paragraph}</div>
 
-        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-            <Marquee pauseOnHover repeat={5} className="[--duration:20s]">
-                {firstRow.map((video) => (
-                <VideoComponent key={video} source={video} />
-                ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover repeat={5} className="[--duration:20s]">
-                {secondRow.map((video) => (
-                <VideoComponent key={video} source={video} />
-                ))}
-            </Marquee>
+        <div className="">
+        <div ref={scrollContainer} className="relative p-0 h-screen origin-top">
+            <motion.div style={{ scale: scale3 }} className="sticky top-0 flex items-center justify-center">
+                <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background">
+                    <Marquee pauseOnHover repeat={5} className="[--duration:20s]">
+                        {firstRow.map((video) => (
+                        <VideoComponent key={video} source={video} />
+                        ))}
+                    </Marquee>
+                    <Marquee reverse pauseOnHover repeat={5} className="[--duration:20s]">
+                        {secondRow.map((video) => (
+                        <VideoComponent key={video} source={video} />
+                        ))}
+                    </Marquee>
+                </div>
+            </motion.div>
+        </div>
         </div>
     </ContentShell>
   );
