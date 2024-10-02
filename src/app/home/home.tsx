@@ -48,9 +48,12 @@ const Home = () => {
           <LandingContent offset={offset} />
         </motion.div>
       </div>
+      
+      <div className="space-y-72">
+        <Intro />
+        <VideoCarousel />
+      </div>
 
-      <Intro />
-      <VideoCarousel />
       <EplusBrand />
       <BlogSection />
       
