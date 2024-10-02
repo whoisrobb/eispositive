@@ -8,7 +8,8 @@ const FooterBanner = () => {
       <div className="lg:h-screen w-full md:h-[75vh] hidden md:flex items-center justify-center fixed bottom-0 overflow-hidden bg-black">
         <video
           className="h-full w-full object-cover"
-          src={'https://utfs.io/f/0322892d-e452-4547-8ee4-70be6f38731e-vilrxf.mp4'}
+          // src={'https://utfs.io/f/0322892d-e452-4547-8ee4-70be6f38731e-vilrxf.mp4'}
+          src={'https://utfs.io/f/2DareqxOliXd27FpcsxOliXdKgTS76cFnVJqba9YZ3Ir1NHL'}          
           autoPlay
           loop
           muted
