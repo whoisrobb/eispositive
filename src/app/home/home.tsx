@@ -37,7 +37,7 @@ const Home = () => {
           transition={{ duration: .5 }}
         >
           <video
-            src={'https://utfs.io/f/c20f12da-a96b-4693-9301-de8b73169790-2imfzt.mp4'}
+            src={'https://utfs.io/f/2DareqxOliXd3XxV9pJJpwcANB72RnMP9CjOzgedtsEiQyL0'}
             className='object-cover h-[100%] w-[100%]'
             autoPlay
             loop

@@ -21,7 +21,7 @@ const EplusBrand = () => {
         <div className="flex md:flex-row flex-col gap-8" ref={container}>
             <div className="">
                 <VideoComponent
-                    source="a84cba26-9acd-4516-8ef7-cb14e4a1cd0d-iksgw4.mp4"
+                    source="2DareqxOliXdYm5ugVPTqLuXsedI3mikzVPRJTwj2vF04M76"
                     className="lg:w-[40rem] md:w-[22rem] w-[full] lg:h-[25rem] h-[13.5rem]"
                 />
             </div>
