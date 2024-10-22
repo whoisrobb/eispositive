@@ -18,6 +18,7 @@ const BlogSection = () => {
         <Link
           to={`/blog/${index}`}
           onClick={handleScrollToTop}
+          key={index}
         >
           <BlogComponent
             image={blog.image}

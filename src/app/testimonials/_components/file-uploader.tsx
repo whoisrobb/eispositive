@@ -92,20 +92,6 @@ export function FileUploader(props: FileUploaderProps) {
 
   const isDisabled = disabled || (files?.length ?? 0) >= maxFileCount;
 
-  const handleSubmit = async () => {
-    if (onUpload && files?.length) {
-      try {
-        await onUpload(files);
-        toast.success("Files uploaded successfully!");
-        setFiles([]); // Clear the files after successful submission
-      } catch (error) {
-        toast.error("Failed to upload files.");
-      }
-    } else {
-      toast.error("No files to upload.");
-    }
-  };
-
   return (
     <div className="relative flex flex-col gap-6 overflow-hidden">
       <Dropzone
@@ -182,15 +168,6 @@ export function FileUploader(props: FileUploaderProps) {
         </ScrollArea>
       ) : null}
 
-      {/* Submit Button */}
-      <Button
-        type="button"
-        onClick={handleSubmit}
-        disabled={isDisabled || !files?.length}
-        className="self-end mt-4"
-      >
-        Submit
-      </Button>
     </div>
   );
 }

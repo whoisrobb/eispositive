@@ -14,10 +14,11 @@ import {
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea"
-import { DialogUploader } from "./dialog-upload"
+import { useAddFiles } from "@/app/hooks/useFileQuery"
+import { toast } from "sonner"
+import { FileUploader } from "./file-uploader"
+import { useState } from "react"
 
-const allowedFileTypes = ['image/jpeg', 'image/png', 'video/mp4']; // Add more as needed
-const maxFileSize = 5 * 1024 * 1024; // 5MB
 const VALUES = ["Facebook", "Instagram", "X", "Friend/Family", "Other"] as const;
 
 const FormSchema = z.object({
@@ -26,26 +27,10 @@ const FormSchema = z.object({
     }),
     lastName: z.string().optional(),
     email: z.string().email(),
-    file: z
-        .instanceof(File)
-        .refine((file) => allowedFileTypes.includes(file.type), {
-            message: 'Invalid file type. Only JPEG, PNG, and MP4 files are allowed.',
-        })
-        .refine((file) => file.size <= maxFileSize, {
-            message: `File size must be less than ${maxFileSize / (1024 * 1024)}MB.`,
-        }),
     description: z.string().min(3).max(1024),
     reference: z.enum(VALUES)
 })
 
-/*
-first name
-last name
-email
-description
-file
-reference - FB, IG, X (Twitter), Friend/Family, Other 
-*/
 
 const ShareForm = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -57,11 +42,34 @@ const ShareForm = () => {
         email: "",
         reference: "Facebook"
     },
-  })
+  });
+    const [files, setFiles] = useState<File[]>([]);
+  
+  const { mutateAsync: createFolderMutation } = useAddFiles();
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data)
-  }
+    const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+        console.log({...values, files })
+        
+        const formData = new FormData();
+        formData.append("firstname", values.firstName);
+        formData.append("lastname", values.lastName!);
+        formData.append("email", values.email);
+        formData.append("description", values.description);
+        formData.append("reference", values.reference);
+        files.forEach((file) => formData.append("files", file));
+        
+        let folderCreationPromise = () => createFolderMutation(formData);
+
+        toast.promise(folderCreationPromise(), {
+            loading: 'Creating folder...',
+            success: () => {
+                return 'Successfully sent';
+            },
+            error: (error) => {
+                return error.message || 'Failed to send';
+            },
+        });
+    };
 
   return (
     <Form {...form}>
@@ -137,7 +145,7 @@ const ShareForm = () => {
                 )}
             />
 
-            <DialogUploader className="h-9" />
+            {/* <DialogUploader className="h-9" /> */}
         </div>
 
         <FormField
@@ -152,6 +160,13 @@ const ShareForm = () => {
                     <FormMessage />
                 </FormItem>
             )}
+        />
+        
+        <FileUploader
+            maxFileCount={8}
+            maxSize={12 * 1024 * 1024}
+            onValueChange={setFiles}
+            // onUpload={handleUpload}
         />
 
         <Button type="submit">Submit</Button>
