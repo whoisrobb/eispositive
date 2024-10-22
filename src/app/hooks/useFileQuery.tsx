@@ -4,7 +4,7 @@ export const useAddFiles = () => {
     const queryClient = useQueryClient();
     
     const handleAddFolderFiles = async (formData: FormData) => {
-        const response = await fetch('http://localhost:5050/eplus', {
+        const response = await fetch('https://vault-drop-server.onrender.com/eplus', {
             method: "POST",
             body: formData
         });
