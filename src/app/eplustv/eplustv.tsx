@@ -10,7 +10,7 @@ const EplusTv = () => {
       <PageShell
         title={title}
         subtitle={subtitle}
-        source={'https://utfs.io/f/15ac16b6-67dc-4730-a56e-90c009f18f9d-ft9aq1.mp4'}
+        source={'https://utfs.io/f/2DareqxOliXd2DezKtxOliXdKgTS76cFnVJqba9YZ3Ir1NHL'}
         type="video"
       />
 
