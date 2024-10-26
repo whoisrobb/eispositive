@@ -17,7 +17,7 @@ const About = () => {
       />
       <div className="h-96 w-full -z-10">
           <img
-              src={'https://utfs.io/f/2DareqxOliXdugcqIe7ny2rLYE0IWhtomw83RGTC9jla1OKz'}
+              src={'https://utfs.io/f/cc802fe8-212a-4e39-aa4b-ff0de700dd27-wdv566.png'}
               className="h-full w-full object-cover"
               alt=""
           />
