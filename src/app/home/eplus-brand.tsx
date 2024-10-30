@@ -23,6 +23,7 @@ const EplusBrand = () => {
                 <VideoComponent
                     source="2DareqxOliXdYm5ugVPTqLuXsedI3mikzVPRJTwj2vF04M76"
                     className="lg:w-[40rem] md:w-[22rem] w-[full] lg:h-[25rem] h-[13.5rem]"
+                    autoplay={true}
                 />
             </div>
 

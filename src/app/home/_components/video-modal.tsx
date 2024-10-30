@@ -17,7 +17,7 @@ const VideoModal = ({ children, videoSrc }: VideoModalProps) => {
   return (
     <Dialog>
         <DialogTrigger>{children}</DialogTrigger>
-        <DialogContent>
+        <DialogContent className="bg-transparent border-none">
             <DialogHeader>
                 <DialogTitle className="sr-only">Video Player</DialogTitle>
             </DialogHeader>

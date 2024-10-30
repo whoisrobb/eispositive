@@ -6,10 +6,11 @@ import { cn } from "@/utils/utils";
 
 type VideoComponentProps = HTMLAttributes<HTMLDivElement> & {
   source: string;
+  autoplay?: boolean;
 };
 
-const VideoComponent = ({ source, className }: VideoComponentProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const VideoComponent = ({ source, autoplay, className }: VideoComponentProps) => {
+  const [isPlaying, setIsPlaying] = useState(autoplay ? autoplay : false);
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -27,7 +28,6 @@ const VideoComponent = ({ source, className }: VideoComponentProps) => {
   return (
     <VideoModal
       videoSrc={`https://utfs.io/f/${source}`}
-      // videoSrc="https://www.youtube.com/watch?v=CTMxkDgYIkI"
     >
     <div
       className={cn("h-36 w-64 overflow-hidden rounded relative border", className)}
@@ -36,7 +36,7 @@ const VideoComponent = ({ source, className }: VideoComponentProps) => {
         setIsHovered(true);
       }}
       onMouseLeave={() => {
-        setIsPlaying(false);
+        setIsPlaying(autoplay ? autoplay : false);
         setIsHovered(false);
       }}
     >
