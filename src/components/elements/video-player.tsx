@@ -21,8 +21,14 @@ const VideoPlayer = ({ videoSrc }: VideoPlayerProps) => {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto rounded-xl overflow-hidden p-0">
             <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+            {/* <iframe
+                src={videoSrc}
+                className="size-full rounded-2xl"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe> */}
         </div>
     );
 };

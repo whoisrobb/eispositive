@@ -1,6 +1,8 @@
 import ContentShell from "@/components/shells/content-shell";
 import { useRef } from "react";
 import useSplitPara from "../hooks/useSplitPara";
+import Magnetic from "@/components/elements/magnetic";
+import { Button } from '@/components/ui/button';
 
 const p1 = '"Everything is Positive" is a movement dedicated to empowering individuals and fostering self-sustainable communities. E+ is more than a brand; it\'s a call to turn negatives into positives and inspire collective growth.'
 const p2 = 'Join the E+Positive Movement by sharing your story and connecting with others. We provide a safe platform for members to share experiences and hear from one another, helping us all become agents of change in our communities.'
@@ -58,9 +60,15 @@ const Intro = () => {
                 {paragraph1}
             </p>
 
-            <p className="text-muted-foreground leading-tight flex flex-wrap gap-x-2">
-                {paragraph2}
-            </p>
+            <div className={"space-y-4"}>
+                <p className="text-muted-foreground leading-tight flex flex-wrap gap-x-2">
+                    {paragraph2}
+                </p>
+
+                <Magnetic>
+                    <Button className="aspect-square h-24 rounded-full">Join us</Button>
+                </Magnetic>
+            </div>
         </div>
     </div>
     
