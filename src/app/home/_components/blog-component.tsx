@@ -13,7 +13,7 @@ const BlogComponent = ({ image, title, subtitle , read}: BlogComponentProps) => 
     const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-        className="w-full flex md:flex-col rounded-md overflow-hidden"
+        className="w-full flex flex-col rounded-md overflow-hidden"
     >
         <div
             onMouseEnter={() => {
